@@ -1,0 +1,523 @@
+/* Navbar Styles */
+.navbar {
+  background: rgba(3, 3, 3, 0.98);
+  backdrop-filter: blur(12px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+  padding: 14px 0;
+  transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+  padding: 10px 0;
+  background: rgba(3, 3, 3, 0.99);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* Logo Styles */
+.logo {
+  text-decoration: none;
+  transition: transform 0.2s ease;
+  z-index: 1002;
+}
+
+.logo:hover {
+  transform: scale(1.02);
+}
+
+.logo h1 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #D4AF37 0%, #F9E2A1 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.logo p {
+  font-size: 0.7rem;
+  letter-spacing: 1.5px;
+  color: #B28B2C;
+  margin: 0;
+}
+
+/* Desktop Navigation Links */
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #ddd;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.nav-links a i {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #D4AF37;
+}
+
+.nav-links a.active i {
+  opacity: 1;
+}
+
+.desktop-cta {
+  margin-left: 16px;
+}
+
+/* Desktop CTA Button */
+.btn-outline-small {
+  background: transparent;
+  border: 1.5px solid #D4AF37;
+  padding: 8px 20px;
+  border-radius: 48px;
+  color: #D4AF37;
+  font-weight: 600;
+  transition: 0.2s;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn-outline-small:hover {
+  background: #D4AF37;
+  color: #0a0a0a;
+  transform: translateY(-2px);
+}
+
+/* ============================================ */
+/* MOBILE MENU TOGGLE BUTTON - FIXED & VISIBLE */
+/* ============================================ */
+.menu-toggle {
+  display: none;
+  background: rgba(212, 175, 55, 0.2);
+  border: 2px solid #D4AF37;
+  color: #D4AF37;
+  cursor: pointer;
+  padding: 10px 14px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  z-index: 1002;
+  font-size: 1.5rem;
+  line-height: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-toggle i {
+  font-size: 1.5rem;
+  color: #D4AF37;
+  pointer-events: none;
+}
+
+.menu-toggle:hover {
+  background: #D4AF37;
+  transform: scale(1.05);
+}
+
+.menu-toggle:hover i {
+  color: #0a0a0a;
+}
+
+.menu-toggle.active {
+  background: #D4AF37;
+}
+
+.menu-toggle.active i {
+  color: #0a0a0a;
+}
+
+/* Mobile Menu - Slide from right */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 85%;
+  max-width: 350px;
+  height: 100vh;
+  background: linear-gradient(135deg, #0a0a0a 0%, #030303 100%);
+  backdrop-filter: blur(20px);
+  z-index: 1001;
+  transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
+  border-left: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.mobile-menu.active {
+  right: 0;
+}
+
+.mobile-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 20px;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.mobile-logo h3 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #D4AF37 0%, #F9E2A1 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin: 0;
+}
+
+.mobile-logo p {
+  font-size: 0.6rem;
+  color: #B28B2C;
+  margin: 0;
+}
+
+.mobile-menu-close {
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid #D4AF37;
+  color: #D4AF37;
+  font-size: 1.3rem;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.mobile-menu-close:hover {
+  background: #D4AF37;
+  color: #0a0a0a;
+  transform: scale(1.05);
+}
+
+.mobile-nav-links {
+  list-style: none;
+  padding: 20px 0;
+  margin: 0;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.mobile-nav-links li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mobile-nav-links a {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  text-decoration: none;
+  color: #e8e8e8;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  font-family: 'Poppins', sans-serif;
+}
+
+.mobile-nav-links a i:first-child {
+  width: 24px;
+  font-size: 1.1rem;
+  color: #D4AF37;
+}
+
+.mobile-nav-links a .arrow {
+  margin-left: auto;
+  font-size: 0.8rem;
+  color: #D4AF37;
+  transition: transform 0.2s;
+}
+
+.mobile-nav-links a:hover {
+  background: rgba(212, 175, 55, 0.1);
+  padding-left: 24px;
+}
+
+.mobile-nav-links a:hover .arrow {
+  transform: translateX(4px);
+}
+
+.mobile-nav-links a.active {
+  background: rgba(212, 175, 55, 0.15);
+  color: #D4AF37;
+  border-left: 3px solid #D4AF37;
+}
+
+.mobile-menu-footer {
+  padding: 20px;
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.btn-gold-mobile {
+  background: linear-gradient(105deg, #D4AF37, #b88d1f);
+  border: none;
+  padding: 14px 24px;
+  font-weight: 700;
+  border-radius: 48px;
+  color: #0a0a0a;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-size: 0.95rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.btn-gold-mobile:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+.mobile-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mobile-contact-info a {
+  color: #b8b8b8;
+  text-decoration: none;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  transition: color 0.2s;
+}
+
+.mobile-contact-info a i {
+  color: #D4AF37;
+}
+
+.mobile-contact-info a:hover {
+  color: #D4AF37;
+}
+
+/* Menu Overlay */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Scrollbar styling for mobile menu */
+.mobile-nav-links::-webkit-scrollbar {
+  width: 4px;
+}
+
+.mobile-nav-links::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+.mobile-nav-links::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border-radius: 4px;
+}
+
+/* ============================================ */
+/* RESPONSIVE BREAKPOINTS */
+/* ============================================ */
+
+/* Tablet and Mobile - Show toggle button */
+@media (max-width: 900px) {
+  .menu-toggle {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-links {
+    display: none !important;
+  }
+
+  .nav-container {
+    padding: 0 20px;
+  }
+}
+
+/* Hide mobile menu on desktop */
+@media (min-width: 901px) {
+  .mobile-menu,
+  .menu-overlay {
+    display: none;
+  }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 600px) {
+  .navbar {
+    padding: 10px 0;
+  }
+
+  .logo h1 {
+    font-size: 1.3rem;
+  }
+
+  .logo p {
+    font-size: 0.55rem;
+  }
+
+  .menu-toggle {
+    padding: 8px 12px;
+  }
+  
+  .menu-toggle i {
+    font-size: 1.3rem;
+  }
+
+  .mobile-menu {
+    width: 85%;
+    max-width: 300px;
+  }
+
+  .mobile-nav-links a {
+    padding: 14px 20px;
+    font-size: 0.95rem;
+  }
+
+  .mobile-menu-header {
+    padding: 20px 16px;
+  }
+
+  .mobile-menu-footer {
+    padding: 16px;
+  }
+}
+
+/* Prevent body scroll when menu is open */
+body.menu-open {
+  overflow: hidden;
+}
+
+
+/* Logo Image Styles */
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-image {
+  height: 50px;
+  width: auto;
+  transition: all 0.3s ease;
+}
+
+/* Different logo size on scroll */
+.navbar.scrolled .logo-image {
+  height: 45px;
+}
+
+/* Mobile logo image */
+.mobile-logo-image {
+  height: 40px;
+  width: auto;
+  margin-bottom: 5px;
+}
+
+/* Footer logo image */
+.footer-logo-image {
+  height: 50px;
+  width: auto;
+  margin-bottom: 10px;
+}
+
+/* If you want to keep text as backup */
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-text h1 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--gold-primary) 0%, #F9E2A1 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.logo-text p {
+  font-size: 0.7rem;
+  letter-spacing: 1.5px;
+  color: var(--gold-dark);
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .logo-image {
+    height: 40px;
+  }
+  
+  .navbar.scrolled .logo-image {
+    height: 35px;
+  }
+  
+  .footer-logo-image {
+    height: 40px;
+  }
+}

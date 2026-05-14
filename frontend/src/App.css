@@ -1,0 +1,186 @@
+/* M.K GATHU Financial Consulting - App Styles */
+.App {
+  min-height: 100vh;
+  background-color: #050505;
+}
+
+/* Remove default React logo styles since we're not using them */
+.App-logo {
+  display: none;
+}
+
+/* Ensure all pages take full width */
+.page {
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Smooth scrolling for the entire app */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for the whole app */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B28B2C;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(212, 175, 55, 0.3);
+  color: #D4AF37;
+}
+
+::-moz-selection {
+  background: rgba(212, 175, 55, 0.3);
+  color: #D4AF37;
+}
+
+/* Loading state for lazy loading */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  color: #D4AF37;
+  font-size: 1.2rem;
+}
+
+.loading::after {
+  content: '';
+  width: 40px;
+  height: 40px;
+  margin-left: 15px;
+  border: 3px solid rgba(212, 175, 55, 0.3);
+  border-top-color: #D4AF37;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Fade in animation for page transitions */
+.page-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.page-exit {
+  opacity: 1;
+}
+
+.page-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+/* Utility classes */
+.text-gold {
+  color: #D4AF37;
+}
+
+.bg-gold {
+  background: linear-gradient(105deg, #D4AF37, #b88d1f);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #FFFFFF 10%, #D4AF37 85%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Container responsive padding */
+@media (max-width: 1280px) {
+  .container {
+    padding: 0 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid #D4AF37;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Skip to content link for accessibility */
+.skip-to-content {
+  position: fixed;
+  top: -40px;
+  left: 0;
+  background: #D4AF37;
+  color: #0a0a0a;
+  padding: 8px 16px;
+  text-decoration: none;
+  z-index: 10000;
+  transition: top 0.2s;
+}
+
+.skip-to-content:focus {
+  top: 0;
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .navbar,
+  .footer,
+  .whatsapp-chat,
+  .btn-gold,
+  .btn-outline {
+    display: none !important;
+  }
+  
+  body {
+    background: white;
+    color: black;
+  }
+  
+  .container {
+    max-width: 100%;
+    padding: 0;
+  }
+}
