@@ -18,7 +18,7 @@ export default function Reviews() {
   });
 
   // Google Sheets Web App URL - Replace with your actual URL
-  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzsANgWy2JzJgOUv9S3tHtrDse-9fKOl02NyY-meGB8pj47tyhwgJ3EMKNffVeJ8jnZIw/exec";
+  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzXHmp7PyoUGbpPeKSxmn46e91adRkDKUPEqszf8mB642_YkticBQg2VHm9BW9JcuCu3Q/exec";
 
   const [testimonials, setTestimonials] = useState([
     {
