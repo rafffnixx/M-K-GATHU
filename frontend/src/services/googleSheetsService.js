@@ -1,5 +1,5 @@
 
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx2NThPlVL7QCNb5sx9v6I-W8KRwGeS-TJ3RqJOdl4tG5eF2Y38hBbr9736XaDge0tF/exec";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzsANgWy2JzJgOUv9S3tHtrDse-9fKOl02NyY-meGB8pj47tyhwgJ3EMKNffVeJ8jnZIw/exec";
 
 // Submit Review Form
 export const submitReview = async (formData) => {
