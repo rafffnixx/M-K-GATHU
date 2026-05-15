@@ -43,7 +43,7 @@ export default function Footer() {
             </div>
             <p className="footer-description">
               Premier financial consulting firm based in Nairobi, Kenya, dedicated to empowering 
-              businesses with clarity, control, and growth — from registration to profitability.
+              businesses with clarity, control, and growth from registration to profitability.
             </p>
             <div className="social-links">
               <a href="https://wa.me/254762610912" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">

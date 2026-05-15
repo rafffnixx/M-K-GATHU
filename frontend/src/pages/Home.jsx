@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Home() {
+  const navigate = useNavigate();
+
   useEffect(() => {
     // Smooth scroll for anchor links
     const handleAnchorClick = (e) => {
@@ -26,11 +28,26 @@ export default function Home() {
     };
   }, []);
 
+  const handleServiceClick = (serviceId) => {
+    navigate(`/service/${serviceId}`);
+    window.scrollTo(0, 0);
+  };
+
+  const services = [
+    { id: 'business-startup', icon: 'fas fa-rocket', title: 'Business Start-Up Support', desc: 'Business registration, permits, licensing, and structuring for new ventures in Kenya.' },
+    { id: 'daily-money-management', icon: 'fas fa-wallet', title: 'Daily Money Management', desc: 'Real-time cash flow tracking, expense monitoring, and operational finance oversight.' },
+    { id: 'debt-tracking', icon: 'fas fa-credit-card', title: 'Payments & Debt Tracking', desc: 'Automated invoicing, accounts receivable, aging reports, and debt recovery strategies.' },
+    { id: 'payroll', icon: 'fas fa-users', title: 'Payroll Services', desc: 'Payroll processing, statutory deductions, payslips, NSSF, NHIF, and leave management.' },
+    { id: 'tax-compliance', icon: 'fas fa-file-invoice', title: 'Tax & KRA Compliance', desc: 'VAT, withholding tax, income tax filing, KRA PIN updates, and audit support.' },
+    { id: 'financial-reports', icon: 'fas fa-chart-pie', title: 'Financial Reports', desc: 'Profit & loss, balance sheets, management accounts, and insightful dashboards.' },
+    { id: 'business-advisory', icon: 'fas fa-handshake', title: 'Business Advisory', desc: 'Growth strategies, pricing guidance, financial forecasting & investment readiness.' },
+    { id: 'kra-compliance-plus', icon: 'fas fa-shield-alt', title: 'KRA Compliance Plus', desc: 'ETR, iTax support, tax health checks and representation before KRA.' }
+  ];
+
   return (
     <div className="home-page">
       {/* Hero Section */}
       <section id="home" className="hero-section">
-        
         <div className="hero-content">
           <div className="hero-tagline">
             <i className="fas fa-chart-line"></i> Trusted by Kenyan Enterprises
@@ -61,58 +78,28 @@ export default function Home() {
             <p className="section-subtitle">Comprehensive financial solutions tailored for Kenyan businesses from startup to profitability.</p>
           </div>
           <div className="services-grid">
-            <div className="service-card">
-              <div className="service-icon"><i className="fas fa-rocket"></i></div>
-              <h3>Business Start-Up Support</h3>
-              <p>Business registration, permits, licensing, and structuring for new ventures in Kenya.</p>
-              <Link to="/service/business-startup" className="service-link">Learn More <i className="fas fa-arrow-right"></i></Link>
-            </div>
-            <div className="service-card">
-              <div className="service-icon"><i className="fas fa-wallet"></i></div>
-              <h3>Daily Money Management</h3>
-              <p>Real-time cash flow tracking, expense monitoring, and operational finance oversight.</p>
-              <Link to="/service/daily-money-management" className="service-link">Learn More <i className="fas fa-arrow-right"></i></Link>
-            </div>
-            <div className="service-card">
-              <div className="service-icon"><i className="fas fa-credit-card"></i></div>
-              <h3>Payments & Debt Tracking</h3>
-              <p>Automated invoicing, accounts receivable, aging reports, and debt recovery strategies.</p>
-              <Link to="/service/debt-tracking" className="service-link">Learn More <i className="fas fa-arrow-right"></i></Link>
-            </div>
-            <div className="service-card">
-              <div className="service-icon"><i className="fas fa-users"></i></div>
-              <h3>Payroll Services</h3>
-              <p>Payroll processing, statutory deductions, payslips, NSSF, NHIF, and leave management.</p>
-              <Link to="/service/payroll" className="service-link">Learn More <i className="fas fa-arrow-right"></i></Link>
-            </div>
-            <div className="service-card">
-              <div className="service-icon"><i className="fas fa-file-invoice"></i></div>
-              <h3>Tax & KRA Compliance</h3>
-              <p>VAT, withholding tax, income tax filing, KRA PIN updates, and audit support.</p>
-              <Link to="/service/tax-compliance" className="service-link">Learn More <i className="fas fa-arrow-right"></i></Link>
-            </div>
-            <div className="service-card">
-              <div className="service-icon"><i className="fas fa-chart-pie"></i></div>
-              <h3>Financial Reports</h3>
-              <p>Profit & loss, balance sheets, management accounts, and insightful dashboards.</p>
-              <Link to="/service/financial-reports" className="service-link">Learn More <i className="fas fa-arrow-right"></i></Link>
-            </div>
-            <div className="service-card">
-              <div className="service-icon"><i className="fas fa-handshake"></i></div>
-              <h3>Business Advisory</h3>
-              <p>Growth strategies, pricing guidance, financial forecasting & investment readiness.</p>
-              <Link to="/service/business-advisory" className="service-link">Learn More <i className="fas fa-arrow-right"></i></Link>
-            </div>
-            <div className="service-card">
-              <div className="service-icon"><i className="fas fa-shield-alt"></i></div>
-              <h3>KRA Compliance Plus</h3>
-              <p>ETR, iTax support, tax health checks and representation before KRA.</p>
-              <Link to="/service/kra-compliance-plus" className="service-link">Learn More <i className="fas fa-arrow-right"></i></Link>
-            </div>
+            {services.map((service) => (
+              <div 
+                key={service.id}
+                className="service-card clickable" 
+                onClick={() => handleServiceClick(service.id)}
+                role="button"
+                tabIndex={0}
+                onKeyPress={(e) => {
+                  if (e.key === 'Enter') handleServiceClick(service.id);
+                }}
+              >
+                <div className="service-icon"><i className={service.icon}></i></div>
+                <h3>{service.title}</h3>
+                <p>{service.desc}</p>
+                <div className="service-link">Learn More <i className="fas fa-arrow-right"></i></div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
+      {/* Rest of your component remains the same */}
       {/* About Us Preview Section */}
       <section id="about" className="about-preview">
         <div className="container">

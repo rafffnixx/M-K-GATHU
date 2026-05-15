@@ -261,6 +261,17 @@ h1, h2, h3, h4, .logo, .nav-links a, .btn-gold, .btn-outline {
   box-shadow: 0 25px 35px -12px rgba(212, 175, 55, 0.15);
 }
 
+/* Clickable Service Cards */
+.service-card.clickable {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.service-card.clickable:hover {
+  transform: translateY(-10px);
+  border-color: var(--gold-primary);
+}
+
 .service-icon {
   font-size: 3rem;
   color: var(--gold-primary);
@@ -280,19 +291,26 @@ h1, h2, h3, h4, .logo, .nav-links a, .btn-gold, .btn-outline {
 
 .service-link {
   display: inline-block;
-  margin-top: 16px;
+  margin-top: 20px;
   color: var(--gold-primary);
+  font-weight: 600;
   font-size: 0.85rem;
-  font-weight: 500;
   text-decoration: none;
-  transition: all 0.2s;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .service-link i {
-  transition: transform 0.2s;
+  transition: transform 0.2s ease;
 }
 
-.service-link:hover i {
+.service-card.clickable:hover .service-link {
+  gap: 12px;
+}
+
+.service-card.clickable:hover .service-link i {
   transform: translateX(4px);
 }
 
@@ -1590,58 +1608,68 @@ footer {
 }
 
 /* ---------- RESPONSIVE DESIGN ---------- */
-@media (max-width: 900px) {
-  .container {
-    padding: 0 20px;
-  }
-  
-  .hero-content h1 {
-    font-size: 2.2rem;
-  }
-  
-  .section-title {
-    font-size: 2rem;
-  }
-  
-  .hero-content {
-    padding: 60px 5% 60px 5%;
-  }
-  
-  .page-header h1 {
-    font-size: 2rem;
-  }
-  
-  .summary-card {
-    padding: 32px;
-  }
-  
-  .cta-content h2 {
-    font-size: 1.6rem;
-  }
-  
-  .cta-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .cta-buttons .btn-gold,
-  .cta-buttons .btn-outline {
-    width: 100%;
-    justify-content: center;
-  }
-}
-
+/* Mobile Layout Fixes - Images below content */
 @media (max-width: 768px) {
+  /* About section - image below text */
+  .about-flex {
+    flex-direction: column;
+  }
+  
+  .about-text {
+    order: 1;
+  }
+  
+  .about-img {
+    order: 2;
+    margin-top: 30px;
+  }
+  
+  /* Tax section - image below text */
+  .tax-showcase {
+    flex-direction: column;
+  }
+  
+  .tax-content {
+    order: 1;
+  }
+  
+  .tax-image {
+    order: 2;
+    margin-top: 30px;
+  }
+  
+  /* Services grid - single column */
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .advisory-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Padding adjustments */
   .about-preview, .why-choose-us, .testimonials-preview {
     padding: 60px 0;
   }
   
   .cta-section {
     padding: 60px 0;
-  }
-  
-  .features-grid {
-    grid-template-columns: 1fr;
   }
   
   .feature-card {
@@ -1706,6 +1734,49 @@ footer {
   }
 }
 
+/* Tablet and smaller desktop */
+@media (max-width: 900px) {
+  .container {
+    padding: 0 20px;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .hero-content {
+    padding: 60px 5% 60px 5%;
+  }
+  
+  .page-header h1 {
+    font-size: 2rem;
+  }
+  
+  .summary-card {
+    padding: 32px;
+  }
+  
+  .cta-content h2 {
+    font-size: 1.6rem;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cta-buttons .btn-gold,
+  .cta-buttons .btn-outline {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Small mobile devices */
 @media (max-width: 600px) {
   .hero-content h1 {
     font-size: 1.8rem;
@@ -1740,6 +1811,7 @@ footer {
   }
 }
 
+/* Extra small devices */
 @media (max-width: 480px) {
   .about-text h2 {
     font-size: 1.6rem;

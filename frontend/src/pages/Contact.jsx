@@ -300,10 +300,6 @@ export default function Contact() {
           </div>
         </div>
       </section>
-      // In handleSubmitReview function
-console.log('✅ Review submitted successfully!');
-console.log('📧 Email sent to: rafayellmwong4325@gmail.com');
-console.log('📊 Data saved to Google Sheet');
     </div>
   );
 }
