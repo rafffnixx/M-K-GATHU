@@ -146,7 +146,7 @@ export default function Reviews() {
       console.log('📤 Submitting review...');
       
       // Send to Google Apps Script
-      const response = await fetch(GOOGLE_SCRIPT_URL, {
+      await fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
         mode: 'no-cors',
         headers: {

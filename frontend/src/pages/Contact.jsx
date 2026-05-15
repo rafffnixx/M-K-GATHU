@@ -59,7 +59,7 @@ export default function Contact() {
       console.log('📤 Submitting contact form...');
       
       // Send to Google Apps Script
-      const response = await fetch(GOOGLE_SCRIPT_URL, {
+      await fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
         mode: 'no-cors',
         headers: {
