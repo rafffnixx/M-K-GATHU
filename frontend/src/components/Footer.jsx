@@ -4,7 +4,7 @@ import './Footer.css';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  const logoSrc = "/logo-white.PNG";
+  const logoSrc = "/logo-white.png";
 
   const quickLinks = [
     { path: '/', label: 'Home' },
