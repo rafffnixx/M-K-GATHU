@@ -7,13 +7,8 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
-  // Option A: If logo is in public folder
-  const logoSrc = "/images/logo.jpg";
-  const logoWhiteSrc = "/images/logo-white.jpg";
-  
-  // Option B: If logo is in src/assets folder (uncomment this and comment Option A)
-  // import logo from '../assets/logo.png';
-  // import logoWhite from '../assets/logo-white.png';
+  // Logo paths - images in public folder
+  const logoSrc = "/logo-white.PNG";
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -62,10 +57,9 @@ export default function Navbar() {
   const navLinks = [
     { path: '/', label: 'Home', icon: 'fas fa-home' },
     { path: '/services', label: 'Services', icon: 'fas fa-briefcase' },
-    { path: '/portfolio', label: 'Success Stories', icon: 'fas fa-chart-line' },
-    { path: '/reviews', label: 'Testimonials', icon: 'fas fa-star' },
+    { path: '/portfolio', label: 'Portfolio', icon: 'fas fa-chart-line' },
+    { path: '/reviews', label: 'Reviews', icon: 'fas fa-star' },
     { path: '/about', label: 'About', icon: 'fas fa-users' },
-    { path: '/contact', label: 'Contact', icon: 'fas fa-envelope' }
   ];
 
   const isActive = (path) => {
@@ -74,22 +68,25 @@ export default function Navbar() {
     return false;
   };
 
+  const handleNavClick = (path) => {
+    closeMenu();
+    window.scrollTo(0, 0);
+  };
+
   return (
     <>
       <header className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
         <div className="container nav-container">
-          <Link to="/" className="logo" onClick={closeMenu}>
-            {/* Logo Image - Option A (public folder) */}
+          <Link to="/" className="logo" onClick={() => handleNavClick('/')}>
             <img 
-              src={isScrolled ? logoSrc : logoWhiteSrc} 
+              src={logoSrc}
               alt="M.K GATHU Financial Consulting Logo" 
               className="logo-image"
             />
-            {/* Optional: Keep text as fallback */}
-            {/* <div className="logo-text">
+            <div className="logo-text">
               <h1>M.K GATHU</h1>
               <p>FINANCIAL CONSULTING • KENYA</p>
-            </div> */}
+            </div>
           </Link>
 
           <button 
@@ -107,6 +104,7 @@ export default function Navbar() {
                 <Link 
                   to={link.path} 
                   className={isActive(link.path) ? 'active' : ''}
+                  onClick={() => handleNavClick(link.path)}
                 >
                   <i className={link.icon}></i>
                   <span>{link.label}</span>
@@ -114,7 +112,7 @@ export default function Navbar() {
               </li>
             ))}
             <li className="desktop-cta">
-              <Link to="/contact" className="btn-outline-small">
+              <Link to="/contact" className="btn-outline-small" onClick={() => handleNavClick('/contact')}>
                 <i className="fas fa-calendar-check"></i> Free Consultation
               </Link>
             </li>
@@ -122,11 +120,15 @@ export default function Navbar() {
         </div>
       </header>
 
+      {/* Mobile Menu */}
       <div className={`mobile-menu ${isMenuOpen ? 'active' : ''}`}>
         <div className="mobile-menu-header">
           <div className="mobile-logo">
             <img src={logoSrc} alt="M.K GATHU Logo" className="mobile-logo-image" />
-            <p>FINANCIAL CONSULTING</p>
+            <div className="mobile-logo-text">
+              <h3>M.K GATHU</h3>
+              <p>FINANCIAL CONSULTING • KENYA</p>
+            </div>
           </div>
           <button className="mobile-menu-close" onClick={closeMenu} aria-label="Close menu">
             <i className="fas fa-times"></i>
@@ -139,7 +141,7 @@ export default function Navbar() {
               <Link 
                 to={link.path} 
                 className={isActive(link.path) ? 'active' : ''}
-                onClick={closeMenu}
+                onClick={() => handleNavClick(link.path)}
               >
                 <i className={link.icon}></i>
                 <span>{link.label}</span>
@@ -150,7 +152,7 @@ export default function Navbar() {
         </ul>
         
         <div className="mobile-menu-footer">
-          <Link to="/contact" className="btn-gold-mobile" onClick={closeMenu}>
+          <Link to="/contact" className="btn-gold-mobile" onClick={() => handleNavClick('/contact')}>
             <i className="fas fa-calendar-check"></i> Free Consultation
           </Link>
           <div className="mobile-contact-info">

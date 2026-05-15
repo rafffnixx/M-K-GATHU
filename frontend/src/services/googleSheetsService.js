@@ -1,7 +1,4 @@
-// src/services/googleSheetsService.js
-// M.K GATHU Financial Consulting - Form Submission Service
 
-// REPLACE THIS WITH YOUR ACTUAL WEB APP URL
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx2NThPlVL7QCNb5sx9v6I-W8KRwGeS-TJ3RqJOdl4tG5eF2Y38hBbr9736XaDge0tF/exec";
 
 // Submit Review Form
@@ -40,6 +37,8 @@ export const submitReview = async (formData) => {
     return { success: false, error: error.message };
   }
 };
+
+
 
 // Submit Contact Form
 export const submitContact = async (formData) => {
