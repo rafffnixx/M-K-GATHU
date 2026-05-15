@@ -8,7 +8,7 @@ export default function Navbar() {
   const location = useLocation();
 
   // Logo paths - images in public folder
-  const logoSrc = "/logo-white.PNG";
+  const logoSrc = "/logo.png";
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
