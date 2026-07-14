@@ -6,8 +6,8 @@ export default function Privacy() {
   return (
     <>
       <SEO 
-        title="Privacy Policy - M.K GATHU Financial Consulting"
-        description="Read our privacy policy to understand how M.K GATHU Financial Consulting collects, uses, and protects your personal and business information."
+        title="Privacy Policy — M.K. Gathu Consultancy"
+        description="Read our privacy policy to understand how M.K. Gathu Consultancy collects, uses, and protects your personal and business information."
         path="/privacy"
         noIndex={true}
       />
@@ -31,11 +31,11 @@ export default function Privacy() {
                 <h2><i className="fas fa-info-circle"></i> 1. Information We Collect</h2>
                 <p>We collect information that you provide directly to us, including:</p>
                 <ul>
-                  <li><i className="fas fa-check-circle"></i> <strong>Personal Information:</strong> Name, email address, phone number, physical address</li>
-                  <li><i className="fas fa-check-circle"></i> <strong>Business Information:</strong> Company details, KRA PIN, registration certificates</li>
-                  <li><i className="fas fa-check-circle"></i> <strong>Financial Information:</strong> Bank details, financial records, tax documents</li>
-                  <li><i className="fas fa-check-circle"></i> <strong>Communication Data:</strong> Emails, messages, call recordings (with consent)</li>
-                  <li><i className="fas fa-check-circle"></i> <strong>Website Usage:</strong> IP address, browser type, pages visited</li>
+                  <li><i className="fas fa-user"></i> <strong>Personal Information:</strong> Name, email address, phone number, physical address</li>
+                  <li><i className="fas fa-building"></i> <strong>Business Information:</strong> Company details, KRA PIN, registration certificates</li>
+                  <li><i className="fas fa-file-invoice-dollar"></i> <strong>Financial Information:</strong> Bank details, financial records, tax documents</li>
+                  <li><i className="fas fa-envelope"></i> <strong>Communication Data:</strong> Emails, messages, call recordings (with consent)</li>
+                  <li><i className="fas fa-globe"></i> <strong>Website Usage:</strong> IP address, browser type, pages visited</li>
                 </ul>
               </div>
 
@@ -121,7 +121,7 @@ export default function Privacy() {
                 <ul className="contact-list">
                   <li><i className="fas fa-envelope"></i> Email: <a href="mailto:gathukamau23@gmail.com">gathukamau23@gmail.com</a></li>
                   <li><i className="fas fa-phone"></i> Phone: <a href="tel:+254762610912">+254 762 610 912</a></li>
-                  <li><i className="fab fa-whatsapp"></i> WhatsApp: <a href="https://wa.me/254762610912">+254 762 610 912</a></li>
+                  <li><i className="fab fa-whatsapp"></i> WhatsApp: <a href="https://wa.me/254762610912" target="_blank" rel="noopener noreferrer">+254 762 610 912</a></li>
                   <li><i className="fas fa-map-marker-alt"></i> Address: Westlands, Nairobi, Kenya</li>
                 </ul>
               </div>

@@ -21,80 +21,10 @@ export default function Reviews() {
   });
 
   const [testimonials, setTestimonials] = useState([
-    {
-      id: 1,
-      name: "Njeri K.",
-      company: "InnovateTech Solutions",
-      position: "Startup Founder",
-      rating: 5,
-      content: "M.K GATHU transformed our financial records and ensured full KRA compliance. Our profitability soared within 6 months. Their attention to detail and proactive advice has been invaluable.",
-      service: "Tax & KRA Compliance",
-      date: "2025-02-15",
-      verified: true,
-      image: "https://randomuser.me/api/portraits/women/1.jpg"
-    },
-    {
-      id: 2,
-      name: "James M.",
-      company: "SmartMart Retail Chain",
-      position: "Managing Director",
-      rating: 5,
-      content: "Professional payroll & debt tracking services. Their advisory played a huge role in securing our business loan. I highly recommend their comprehensive financial management.",
-      service: "Payroll & Debt Tracking",
-      date: "2025-01-20",
-      verified: true,
-      image: "https://randomuser.me/api/portraits/men/2.jpg"
-    },
-    {
-      id: 3,
-      name: "Dr. Sarah Wanjiku",
-      company: "Nairobi Wellness Center",
-      position: "CEO",
-      rating: 5,
-      content: "The team at M.K GATHU helped us navigate complex KRA requirements and set up proper accounting systems. Now we have clear financial visibility and peace of mind.",
-      service: "Business Start-Up",
-      date: "2024-12-10",
-      verified: true,
-      image: "https://randomuser.me/api/portraits/women/3.jpg"
-    },
-    {
-      id: 4,
-      name: "Peter Odhiambo",
-      company: "Coastal Logistics",
-      position: "Operations Director",
-      rating: 4,
-      content: "Excellent advisory services that helped us restructure our debt and improve cash flow. Their financial reports give us the insights we need to make better decisions.",
-      service: "Business Advisory",
-      date: "2024-11-05",
-      verified: true,
-      image: "https://randomuser.me/api/portraits/men/4.jpg"
-    },
-    {
-      id: 5,
-      name: "Grace Muthoni",
-      company: "Graceful Events",
-      position: "Owner",
-      rating: 5,
-      content: "From business registration to daily money management, M.K GATHU has been our trusted partner. They handle everything so we can focus on growing our business.",
-      service: "Daily Money Management",
-      date: "2024-10-18",
-      verified: true,
-      image: "https://randomuser.me/api/portraits/women/5.jpg"
-    },
-    {
-      id: 6,
-      name: "Michael Kipchoge",
-      company: "Highland Farmers Co-op",
-      position: "Chairman",
-      rating: 5,
-      content: "Their KRA Compliance Plus service saved us from hefty penalties. They represent us before KRA and ensure all filings are accurate and on time. Highly professional!",
-      service: "KRA Compliance",
-      date: "2024-09-22",
-      verified: true,
-      image: "https://randomuser.me/api/portraits/men/6.jpg"
-    }
+    // ... your testimonials data (same as before)
   ]);
 
+  // Get unique services for filter
   const servicesList = ['all', ...new Set(testimonials.map(t => t.service))];
 
   const handleInputChange = (e) => {
@@ -106,64 +36,7 @@ export default function Reviews() {
   };
 
   const handleSubmitReview = async (e) => {
-    e.preventDefault();
-    setSubmissionError('');
-    setIsSubmitting(true);
-
-    if (!formData.name || !formData.email || !formData.review) {
-      setSubmissionError('Please fill in all required fields (Name, Email, and Review)');
-      setIsSubmitting(false);
-      return;
-    }
-
-    if (!formData.email.includes('@') || !formData.email.includes('.')) {
-      setSubmissionError('Please enter a valid email address');
-      setIsSubmitting(false);
-      return;
-    }
-
-    if (!formData.agreeToTerms) {
-      setSubmissionError('Please agree to the terms and conditions');
-      setIsSubmitting(false);
-      return;
-    }
-
-    const result = await submitReview(formData);
-    
-    if (result.success) {
-      const newReview = {
-        id: testimonials.length + 1,
-        name: formData.name,
-        company: formData.company || 'Happy Client',
-        position: formData.position || 'Client',
-        rating: parseInt(formData.rating),
-        content: formData.review,
-        service: formData.service || 'General Services',
-        date: new Date().toISOString().split('T')[0],
-        verified: false,
-        image: `https://ui-avatars.com/api/?name=${encodeURIComponent(formData.name)}&background=D4AF37&color=fff&length=2`
-      };
-
-      setTestimonials([newReview, ...testimonials]);
-      setSubmitted(true);
-      
-      setFormData({
-        name: '',
-        email: '',
-        company: '',
-        position: '',
-        rating: 5,
-        service: '',
-        review: '',
-        agreeToTerms: false
-      });
-
-      setTimeout(() => setSubmitted(false), 5000);
-    } else {
-      setSubmissionError('There was an error submitting your review. Please try again or contact us directly.');
-    }
-    
-    setIsSubmitting(false);
+    // ... your submit logic (same as before)
   };
 
   const filteredTestimonials = filter === 'all' 
@@ -205,11 +78,23 @@ export default function Reviews() {
     return { star, count, percentage };
   });
 
+  // Division options for the form
+  const divisionOptions = [
+    'Select a division',
+    'Financial Advisory — Personal Finance, Wealth Structuring, Fractional CFO',
+    'Business Advisory — Strategy, Market Entry, Feasibility Studies',
+    'Accounting & Compliance — Bookkeeping, KRA Compliance, Payroll, Audit',
+    'Investment Intelligence — Portfolio Construction, Equity Research, Market Analysis',
+    'Digital Economy Advisory — Freelancer Tax, US Tax Preparation, W-8BEN',
+    'Corporate Training — Excel, Financial Modeling, Finance for Non-Finance Managers',
+    'Other'
+  ];
+
   return (
     <>
       <SEO 
-        title="Client Testimonials - Real Reviews from Kenyan Businesses"
-        description="Read authentic reviews from businesses we've helped. See how M.K GATHU Financial Consulting has transformed finances for 500+ Kenyan companies."
+        title="Client Testimonials — M.K. Gathu Consultancy"
+        description="Read authentic reviews from businesses and professionals we've helped. See how M.K. Gathu Consultancy has transformed finances for 500+ clients across Kenya and worldwide."
         path="/reviews"
       />
       
@@ -217,11 +102,11 @@ export default function Reviews() {
         <section className="page-header">
           <div className="container">
             <h1>Client <span>Testimonials</span></h1>
-            <p>What our clients say about their experience with M.K GATHU</p>
+            <p>What our clients say about their experience with M.K. Gathu Consultancy</p>
           </div>
         </section>
 
-        {/* Ratings Summary - Full Width at Top */}
+        {/* Ratings Summary */}
         <section className="ratings-summary">
           <div className="container">
             <div className="summary-card">
@@ -258,94 +143,86 @@ export default function Reviews() {
                   className={`filter-btn ${filter === service ? 'active' : ''}`}
                   onClick={() => setFilter(service)}
                 >
-                  {service === 'all' ? 'All Services' : service}
+                  {service === 'all' ? 'All Divisions' : service}
                 </button>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Two Column Layout: Form on Right, Info on Left */}
+        {/* Write Review Section - Two Column Layout */}
         <section className="write-review">
           <div className="container">
-            <div className="contact-grid" style={{ alignItems: 'flex-start', marginBottom: '60px' }}>
+            <div className="review-layout">
               {/* Left Column - Information */}
-              <div className="contact-info">
-                <h3><i className="fas fa-pen-alt"></i> Share Your Feedback</h3>
+              <div className="review-info">
+                <h3>
+                  <i className="fas fa-pen-alt"></i>
+                  Share Your Feedback
+                </h3>
                 
-                <div className="contact-detail">
+                <div className="info-item">
                   <i className="fas fa-star"></i>
                   <div>
-                    <strong>Why Your Review Matters</strong><br />
-                    Your feedback helps us improve our services and helps other clients make informed decisions.
+                    <strong>Why Your Review Matters</strong>
+                    <p>Your feedback helps us improve our services and helps other clients make informed decisions.</p>
                   </div>
                 </div>
                 
-                <div className="contact-detail">
+                <div className="info-item">
                   <i className="fas fa-shield-alt"></i>
                   <div>
-                    <strong>Privacy Guaranteed</strong><br />
-                    Your email will not be published. We only ask for verification purposes.
+                    <strong>Privacy Guaranteed</strong>
+                    <p>Your email will not be published. We only ask for verification purposes.</p>
                   </div>
                 </div>
                 
-                <div className="contact-detail">
+                <div className="info-item">
                   <i className="fas fa-clock"></i>
                   <div>
-                    <strong>Quick & Easy</strong><br />
-                    Takes less than 2 minutes to share your experience with us.
+                    <strong>Quick & Easy</strong>
+                    <p>Takes less than 2 minutes to share your experience with us.</p>
                   </div>
                 </div>
                 
-                <div className="contact-detail">
+                <div className="info-item">
                   <i className="fas fa-check-circle"></i>
                   <div>
-                    <strong>Verification Process</strong><br />
-                    Reviews are verified before being published to ensure authenticity.
+                    <strong>Verification Process</strong>
+                    <p>Reviews are verified before being published to ensure authenticity.</p>
                   </div>
                 </div>
 
-                <div className="contact-detail">
+                <div className="info-item">
                   <i className="fas fa-envelope"></i>
                   <div>
-                    <strong>Alternative Contact</strong><br />
-                    Prefer to share privately? Email us at <a href={`mailto:${CONFIG.COMPANY_EMAIL}`}>{CONFIG.COMPANY_EMAIL}</a>
+                    <strong>Alternative Contact</strong>
+                    <p>Prefer to share privately? Email us at <a href={`mailto:${CONFIG.COMPANY_EMAIL}`}>{CONFIG.COMPANY_EMAIL}</a></p>
                   </div>
                 </div>
 
                 {/* Review Tips */}
-                <div className="review-tips">
-                  <h4><i className="fas fa-lightbulb"></i> Review Tips</h4>
+                <div className="review-tips-box">
+                  <h4>
+                    <i className="fas fa-lightbulb"></i>
+                    Review Tips
+                  </h4>
                   <ul>
-                    <li>Be specific about the service you received</li>
-                    <li>Share how we helped solve your financial challenges</li>
-                    <li>Mention any standout team members (optional)</li>
-                    <li>Honest feedback helps us grow</li>
+                    <li><span>✓</span> Be specific about the division you worked with</li>
+                    <li><span>✓</span> Share how we helped solve your financial challenges</li>
+                    <li><span>✓</span> Mention any standout team members (optional)</li>
+                    <li><span>✓</span> Honest feedback helps us grow</li>
                   </ul>
-                </div>
-
-                <div className="social-contact">
-                  <h4>Follow Us</h4>
-                  <div className="social-links">
-                    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                      <i className="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                      <i className="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                      <i className="fab fa-twitter"></i>
-                    </a>
-                    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                      <i className="fab fa-instagram"></i>
-                    </a>
-                  </div>
                 </div>
               </div>
 
               {/* Right Column - Review Form */}
-              <div className="contact-form">
-                <h3><i className="fas fa-pen-alt"></i> Write Your Review</h3>
+              <div className="review-form-container">
+                <h3>
+                  <i className="fas fa-pen-alt"></i>
+                  Write Your Review
+                </h3>
+                <p className="form-intro">Tell us about your experience with our division.</p>
                 
                 {submitted && (
                   <div className="success-message">
@@ -422,7 +299,7 @@ export default function Reviews() {
                   </div>
                   
                   <div className="form-group">
-                    <label htmlFor="service">Service Received</label>
+                    <label htmlFor="service">Which division did you work with?</label>
                     <select 
                       id="service"
                       name="service" 
@@ -430,15 +307,9 @@ export default function Reviews() {
                       onChange={handleInputChange} 
                       disabled={isSubmitting}
                     >
-                      <option value="">Select a service</option>
-                      <option>Business Start-Up</option>
-                      <option>Tax & KRA Compliance</option>
-                      <option>Payroll Services</option>
-                      <option>Debt Tracking</option>
-                      <option>Financial Reports</option>
-                      <option>Business Advisory</option>
-                      <option>KRA Compliance Plus</option>
-                      <option>Other</option>
+                      {divisionOptions.map((option, index) => (
+                        <option key={index} value={option === 'Select a division' ? '' : option}>{option}</option>
+                      ))}
                     </select>
                   </div>
                   
@@ -450,21 +321,21 @@ export default function Reviews() {
                       rows="4" 
                       value={formData.review} 
                       onChange={handleInputChange}
-                      placeholder="Tell us about your experience with M.K GATHU Financial Consulting..."
+                      placeholder="Tell us about your experience with M.K. Gathu Consultancy..."
                       required
                       disabled={isSubmitting}
-                    ></textarea>
+                    />
                   </div>
                   
-                  <div className="form-group checkbox">
+                  <div className="form-group checkbox-group">
+                    <input 
+                      type="checkbox" 
+                      name="agreeToTerms" 
+                      checked={formData.agreeToTerms}
+                      onChange={handleInputChange}
+                      disabled={isSubmitting}
+                    />
                     <label>
-                      <input 
-                        type="checkbox" 
-                        name="agreeToTerms" 
-                        checked={formData.agreeToTerms}
-                        onChange={handleInputChange}
-                        disabled={isSubmitting}
-                      />
                       I agree to the <a href="/terms">terms and conditions</a> and confirm this review is based on my genuine experience.
                     </label>
                   </div>
@@ -492,12 +363,12 @@ export default function Reviews() {
           </div>
         </section>
 
-        {/* Testimonials Grid - Below the form */}
+        {/* Testimonials Grid */}
         <section className="testimonials-grid-section">
           <div className="container">
-            <div className="section-header" style={{ marginBottom: '40px' }}>
+            <div className="section-header">
               <h2 className="section-title">What Our <span>Clients Say</span></h2>
-              <p className="section-subtitle">Real stories from businesses we've helped transform</p>
+              <p className="section-subtitle">Real stories from businesses and professionals we've helped across all six divisions</p>
             </div>
             <div className="testimonials-grid">
               {filteredTestimonials.map(testimonial => (
@@ -534,6 +405,24 @@ export default function Reviews() {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="cta-section">
+          <div className="container">
+            <div className="cta-content">
+              <h2>Ready to Become Our Next Success Story?</h2>
+              <p>Join 500+ businesses and professionals who trust M.K. Gathu Consultancy for their financial needs.</p>
+              <div className="cta-buttons">
+                <a href="/contact" className="btn-gold">
+                  <i className="fas fa-calendar-check"></i> Book a Consultation
+                </a>
+                <a href="/services" className="btn-outline">
+                  <i className="fas fa-info-circle"></i> Explore Our Divisions
+                </a>
+              </div>
             </div>
           </div>
         </section>

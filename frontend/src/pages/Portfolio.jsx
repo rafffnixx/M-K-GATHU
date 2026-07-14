@@ -66,11 +66,45 @@ export default function Portfolio() {
     }
   ];
 
+  // Divisions with icons instead of letters
+  const divisions = [
+    { 
+      icon: "fas fa-chart-pie", 
+      title: "Financial Advisory", 
+      tagline: "Clarity for your money, structure for your future" 
+    },
+    { 
+      icon: "fas fa-handshake", 
+      title: "Business Advisory", 
+      tagline: "Strategy that turns growth into results" 
+    },
+    { 
+      icon: "fas fa-file-invoice", 
+      title: "Accounting & Compliance", 
+      tagline: "The foundation every business is built on" 
+    },
+    { 
+      icon: "fas fa-chart-line", 
+      title: "Investment Intelligence", 
+      tagline: "Informed capital. Deliberate decisions" 
+    },
+    { 
+      icon: "fas fa-globe", 
+      title: "Digital Economy Advisory", 
+      tagline: "Built for the new way people earn" 
+    },
+    { 
+      icon: "fas fa-graduation-cap", 
+      title: "Corporate Training", 
+      tagline: "Building financial fluency, one team at a time" 
+    }
+  ];
+
   return (
     <>
       <SEO 
-        title="Success Stories - Business Transformations in Kenya"
-        description="See how M.K GATHU Financial Consulting has helped Kenyan businesses achieve financial success. Real case studies and results from our clients across various industries."
+        title="Success Stories — M.K. Gathu Consultancy Case Studies"
+        description="Real results from businesses and professionals we've helped — financial advisory, KRA compliance, investment intelligence, and digital economy advisory. Trusted by 500+ clients across Kenya and worldwide."
         path="/portfolio"
       />
       
@@ -78,7 +112,7 @@ export default function Portfolio() {
         <section className="page-header">
           <div className="container">
             <h1>Success <span>Stories</span></h1>
-            <p>Real results from businesses we've transformed across Kenya</p>
+            <p>Real results from businesses and professionals we've helped across Kenya and worldwide</p>
           </div>
         </section>
 
@@ -86,24 +120,24 @@ export default function Portfolio() {
           <div className="container">
             <div className="stats-grid">
               <div className="stat-card">
-                <i className="fas fa-chart-line"></i>
+                <i className="fas fa-building"></i>
                 <h3>500+</h3>
-                <p>Businesses Served</p>
+                <p>Businesses & Professionals Served</p>
               </div>
               <div className="stat-card">
-                <i className="fas fa-percent"></i>
-                <h3>98%</h3>
-                <p>KRA Compliance Rate</p>
+                <i className="fas fa-certificate"></i>
+                <h3>ICPAK</h3>
+                <p>Aligned Practice</p>
               </div>
               <div className="stat-card">
-                <i className="fas fa-trophy"></i>
-                <h3>100%</h3>
-                <p>Client Satisfaction</p>
+                <i className="fas fa-globe"></i>
+                <h3>Worldwide</h3>
+                <p>International Clients Served</p>
               </div>
               <div className="stat-card">
-                <i className="fas fa-calendar"></i>
-                <h3>10+</h3>
-                <p>Years Experience</p>
+                <i className="fas fa-university"></i>
+                <h3>NSE & CMA</h3>
+                <p>Research Informed</p>
               </div>
             </div>
           </div>
@@ -111,6 +145,10 @@ export default function Portfolio() {
 
         <section className="portfolio-grid-section">
           <div className="container">
+            <div className="section-header">
+              <h2 className="section-title">Client <span>Case Studies</span></h2>
+              <p className="section-subtitle">From compliance to strategy to investment intelligence — real results across every division</p>
+            </div>
             <div className="portfolio-grid">
               {caseStudies.map(study => (
                 <div className="portfolio-card" key={study.id}>
@@ -136,7 +174,7 @@ export default function Portfolio() {
                       </div>
                     </div>
                     <Link to="/contact" className="btn-outline small">
-                      Get Similar Results <i className="fas fa-arrow-right"></i>
+                      Discuss Your Case <i className="fas fa-arrow-right"></i>
                     </Link>
                   </div>
                 </div>
@@ -150,7 +188,7 @@ export default function Portfolio() {
           <div className="container">
             <div className="highlight-card">
               <i className="fas fa-quote-right"></i>
-              <p>"M.K GATHU didn't just fix our financial problems; they transformed how we think about money management. Their team is professional, responsive, and truly cares about our success."</p>
+              <p>"M.K. Gathu Consultancy didn't just fix our financial problems; they transformed how we think about money management. Their team is professional, responsive, and truly cares about our success."</p>
               <div className="highlight-author">
                 <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" />
                 <div>
@@ -206,17 +244,38 @@ export default function Portfolio() {
           </div>
         </section>
 
+        {/* Divisions Showcase with Icons */}
+        <section className="divisions-showcase">
+          <div className="container">
+            <div className="section-header">
+              <h2 className="section-title">Our <span>Divisions</span></h2>
+              <p className="section-subtitle">Six integrated divisions working together for your success</p>
+            </div>
+            <div className="showcase-grid">
+              {divisions.map((division, index) => (
+                <div className="showcase-item" key={index}>
+                  <div className="showcase-icon">
+                    <i className={division.icon}></i>
+                  </div>
+                  <h4>{division.title}</h4>
+                  <p>{division.tagline}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section className="cta-section">
           <div className="container">
             <div className="cta-content">
               <h2>Ready to Write Your Success Story?</h2>
-              <p>Join hundreds of Kenyan businesses that have transformed their finances with M.K GATHU</p>
+              <p>Join 500+ businesses and professionals that have transformed their finances with M.K. Gathu Consultancy</p>
               <div className="cta-buttons">
                 <Link to="/contact" className="btn-gold">
-                  <i className="fas fa-calendar-check"></i> Start Your Journey Today
+                  <i className="fas fa-calendar-check"></i> Book a Consultation
                 </Link>
                 <Link to="/services" className="btn-outline">
-                  <i className="fas fa-info-circle"></i> Explore Our Services
+                  <i className="fas fa-info-circle"></i> Explore Our Divisions
                 </Link>
               </div>
             </div>

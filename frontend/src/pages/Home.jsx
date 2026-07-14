@@ -34,49 +34,88 @@ export default function Home() {
     window.scrollTo(0, 0);
   };
 
-  const services = [
-    { id: 'business-startup', icon: 'fas fa-rocket', title: 'Business Start-Up Support', desc: 'Business registration, permits, licensing, and structuring for new ventures in Kenya.' },
-    { id: 'daily-money-management', icon: 'fas fa-wallet', title: 'Daily Money Management', desc: 'Real-time cash flow tracking, expense monitoring, and operational finance oversight.' },
-    { id: 'debt-tracking', icon: 'fas fa-credit-card', title: 'Payments & Debt Tracking', desc: 'Automated invoicing, accounts receivable, aging reports, and debt recovery strategies.' },
-    { id: 'payroll', icon: 'fas fa-users', title: 'Payroll Services', desc: 'Payroll processing, statutory deductions, payslips, NSSF, NHIF, and leave management.' },
-    { id: 'tax-compliance', icon: 'fas fa-file-invoice', title: 'Tax & KRA Compliance', desc: 'VAT, withholding tax, income tax filing, KRA PIN updates, and audit support.' },
-    { id: 'financial-reports', icon: 'fas fa-chart-pie', title: 'Financial Reports', desc: 'Profit & loss, balance sheets, management accounts, and insightful dashboards.' },
-    { id: 'business-advisory', icon: 'fas fa-handshake', title: 'Business Advisory', desc: 'Growth strategies, pricing guidance, financial forecasting & investment readiness.' },
-    { id: 'kra-compliance-plus', icon: 'fas fa-shield-alt', title: 'KRA Compliance Plus', desc: 'ETR, iTax support, tax health checks and representation before KRA.' }
+  const divisions = [
+    { id: 'financial-advisory', icon: 'fas fa-chart-pie', title: 'Financial Advisory', desc: 'Clarity for your money, structure for your future. Personal finance, wealth structuring, and fractional CFO services.' },
+    { id: 'business-advisory', icon: 'fas fa-handshake', title: 'Business Advisory', desc: 'Strategy that turns growth into results. Market entry, pricing strategy, and operational optimization for SMEs.' },
+    { id: 'accounting-compliance', icon: 'fas fa-file-invoice', title: 'Accounting & Compliance', desc: 'The foundation every business is built on. Bookkeeping, KRA compliance, payroll, and audit preparation.' },
+    { id: 'investment-intelligence', icon: 'fas fa-chart-line', title: 'Investment Intelligence', desc: 'Informed capital. Deliberate decisions. Portfolio construction, equity research, and market analysis.' },
+    { id: 'digital-economy', icon: 'fas fa-globe', title: 'Digital Economy Advisory', desc: 'Built for the new way people earn. Freelancer advisory, US tax preparation, and cross-border income structuring.' },
+    { id: 'corporate-training', icon: 'fas fa-graduation-cap', title: 'Corporate Training', desc: 'Building financial fluency, one team at a time. Excel, financial modeling, and finance for non-finance managers.' }
+  ];
+
+  const whoWeServe = [
+    { tag: 'Kenya Focus', title: 'Local Businesses & SMEs', desc: 'Bookkeeping, KRA compliance, VAT, payroll, audits, and fractional CFO services for companies operating in Kenya.', link: '#accounting-compliance' },
+    { tag: 'Individuals · Remote', title: 'Freelancers & Remote Professionals', desc: 'US tax returns (Form 1040, 2555), W-8BEN, ITIN support, multi-currency income structuring, and cross-border tax optimization.', link: '#digital-economy' },
+    { tag: 'Entities · Global', title: 'Global Businesses & Investors', desc: 'Market-entry strategy, cross-border investment analysis, and international financial advisory for global businesses expanding into East Africa.', link: '#business-advisory' }
+  ];
+
+  const insights = [
+    { tag: 'Tax & Compliance', title: "What Kenya's eTIMS rollout means for import-heavy retailers", desc: 'A practical breakdown of device registration, VAT treatment, and where the documentation still lags the interface.', link: 'mailto:gathukamau23@gmail.com?subject=eTIMS%20for%20import-heavy%20retailers' },
+    { tag: 'Digital Economy', title: 'Structuring income when you\'re paid in three currencies', desc: 'How remote workers and freelancers can think about tax residency, timing, and structuring before year-end.', link: 'mailto:gathukamau23@gmail.com?subject=Structuring%20multi-currency%20income' },
+    { tag: 'Investment Intelligence', title: 'Reading the NSE: what the last two quarters actually show', desc: 'A grounded look at sector rotation and where capital allocation discipline still beats timing the market.', link: 'mailto:gathukamau23@gmail.com?subject=NSE%20market%20outlook' }
+  ];
+
+  // Values with icons instead of numbers
+  const values = [
+    { icon: 'fas fa-shield-alt', label: 'Integrity' },
+    { icon: 'fas fa-trophy', label: 'Excellence' },
+    { icon: 'fas fa-lightbulb', label: 'Practical Solutions' },
+    { icon: 'fas fa-graduation-cap', label: 'Continuous Learning' },
+    { icon: 'fas fa-star', label: 'Client Success' },
+    { icon: 'fas fa-handshake', label: 'Professionalism' },
+    { icon: 'fas fa-rocket', label: 'Innovation' },
+    { icon: 'fas fa-clipboard-check', label: 'Accountability' }
   ];
 
   return (
     <>
       <SEO 
-        title="Home - Premier Financial Consulting in Kenya"
-        description="M.K GATHU Financial Consulting offers expert business registration, KRA compliance, payroll, tax advisory, and debt tracking services. Trusted by 500+ Kenyan businesses. Free consultation available."
+        title="M.K. Gathu Consultancy — Business Intelligence · Financial Advisory · Strategic Consulting"
+        description="Nairobi-based financial and business advisory firm trusted by 500+ businesses — financial advisory, business strategy, accounting & compliance, investment intelligence, digital economy advisory, and corporate training."
         path="/"
       />
       
-      {/* Screen-reader-only H1 for SEO - visible to search engines but not users */}
-      <h1 className="sr-only">M.K GATHU Financial Consulting - Premier Financial Management in Kenya</h1>
+      <h1 className="sr-only">M.K. Gathu Consultancy - Business Intelligence· Financial Advisory · Strategic Consulting</h1>
       
       <div className="home-page">
-        {/* Hero Section */}
+        {/* Hero Section with Image */}
         <section id="home" className="hero-section">
-          <div className="hero-content">
-            <div className="hero-tagline">
-              <i className="fas fa-chart-line"></i> Trusted by Kenyan Enterprises
-            </div>
-            <h1>From Registration to <span>Profitability</span> – We Handle Your Finances.</h1>
-            <p className="hero-desc">Strategic financial management for startups, SMEs, and corporations. KRA compliance, daily cash flow, payroll, and advisory all under one roof.</p>
-            <div className="hero-buttons">
-              <Link to="/contact" className="btn-gold">
-                <i className="fas fa-calendar-check"></i> Book Consultation
-              </Link>
-              <Link to="/services" className="btn-outline">
-                Explore Services →
-              </Link>
-            </div>
-            <div className="hero-stats">
-              <div><i className="fas fa-building"></i> 500+ Businesses</div>
-              <div><i className="fas fa-file-invoice-dollar"></i> 98% KRA Compliance</div>
-              <div><i className="fas fa-smile"></i> 100% Client Satisfaction</div>
+          <div className="hero-container">
+            <div className="hero-content-wrapper">
+              {/* Left - Text Content */}
+              <div className="hero-text">
+                <div className="hero-tagline">
+                  <i className="fas fa-map-pin"></i> Nairobi, Kenya · Serving Clients Worldwide
+                </div>
+                <h1>Business Intelligence, Financial Advisory & <span>Strategic Consulting.</span></h1>
+                <p className="hero-desc">Trusted by 500+ Kenyan businesses, plus freelancers and remote professionals worldwide. We combine deep local expertise — KRA, ICPAK, NSE — with specialist international support, including US tax filing for freelancers and remote workers.</p>
+                <div className="hero-buttons">
+                  <Link to="/contact" className="btn-gold">
+                    <i className="fas fa-calendar-check"></i> Book a Consultation
+                  </Link>
+                  <Link to="/services" className="btn-outline">
+                    Explore Our Divisions →
+                  </Link>
+                </div>
+                <div className="hero-stats">
+                  <div><i className="fas fa-building"></i> 500+ businesses & professionals served</div>
+                  <div><i className="fas fa-check-circle"></i> ICPAK aligned · US Tax Preparer credentialed</div>
+                  <div><i className="fas fa-chart-bar"></i> Research informed by NSE & CMA Kenya</div>
+                </div>
+              </div>
+              
+              {/* Right - Image */}
+              <div className="hero-image">
+                <img 
+                  src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600&q=80" 
+                  alt="M.K. Gathu Consultancy - Financial Advisory Team" 
+                  loading="lazy"
+                />
+                <div className="hero-image-badge">
+                  <i className="fas fa-star"></i>
+                  <span>Trusted Since 2016</span>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -86,47 +125,67 @@ export default function Home() {
           <div className="container">
             <div className="badges-grid">
               <div className="badge-item">
-                <i className="fas fa-trophy"></i>
-                <span>Award Winning Service</span>
+                <i className="fas fa-users"></i>
+                <span>500+ Businesses & Professionals Served</span>
               </div>
               <div className="badge-item">
-                <i className="fas fa-shield-alt"></i>
-                <span>Fully Insured</span>
+                <i className="fas fa-globe-africa"></i>
+                <span>Kenya-Based · Remote & International Engagements</span>
               </div>
               <div className="badge-item">
                 <i className="fas fa-certificate"></i>
-                <span>Certified Experts</span>
+                <span>ICPAK Aligned · US Tax Preparer Credentialed</span>
               </div>
               <div className="badge-item">
-                <i className="fas fa-handshake"></i>
-                <span>100% Confidential</span>
+                <i className="fas fa-university"></i>
+                <span>Research Informed by NSE & CMA Kenya</span>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Services Section */}
+        {/* Who We Serve Section */}
+        <section className="who-we-serve">
+          <div className="container">
+            <div className="section-header">
+              <h2 className="section-title">Who We <span>Serve</span></h2>
+              <p className="section-subtitle">Three clients. One firm built to handle all three. Find yourself below, then jump straight to the division built for you.</p>
+            </div>
+            <div className="who-grid">
+              {whoWeServe.map((item, index) => (
+                <div key={index} className="who-card">
+                  <span className="who-tag">{item.tag}</span>
+                  <h3>{item.title}</h3>
+                  <p>{item.desc}</p>
+                  <a href={item.link} className="who-link">Learn More <i className="fas fa-arrow-right"></i></a>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Solutions / Divisions Section */}
         <section id="services" className="services-section">
           <div className="container">
             <div className="section-header">
-              <h2 className="section-title">Our <span>Core Services</span></h2>
-              <p className="section-subtitle">Comprehensive financial solutions tailored for Kenyan businesses from startup to profitability.</p>
+              <h2 className="section-title">Our <span>Divisions</span></h2>
+              <p className="section-subtitle">One firm. Six divisions. Each built around a specific kind of client — from individuals structuring personal wealth to businesses navigating audits, market entry, or their first fractional CFO.</p>
             </div>
             <div className="services-grid">
-              {services.map((service) => (
+              {divisions.map((division) => (
                 <div 
-                  key={service.id}
+                  key={division.id}
                   className="service-card clickable" 
-                  onClick={() => handleServiceClick(service.id)}
+                  onClick={() => handleServiceClick(division.id)}
                   role="button"
                   tabIndex={0}
                   onKeyPress={(e) => {
-                    if (e.key === 'Enter') handleServiceClick(service.id);
+                    if (e.key === 'Enter') handleServiceClick(division.id);
                   }}
                 >
-                  <div className="service-icon"><i className={service.icon}></i></div>
-                  <h3>{service.title}</h3>
-                  <p>{service.desc}</p>
+                  <div className="service-icon"><i className={division.icon}></i></div>
+                  <h3>{division.title}</h3>
+                  <p>{division.desc}</p>
                   <div className="service-link">Learn More <i className="fas fa-arrow-right"></i></div>
                 </div>
               ))}
@@ -134,138 +193,101 @@ export default function Home() {
           </div>
         </section>
 
-        {/* About Us Preview Section */}
-        <section id="about" className="about-preview">
-          <div className="container">
-            <div className="about-flex">
-              <div className="about-text">
-                <h2>About <span>M.K GATHU</span></h2>
-                <p>We are a premier financial consulting firm based in Nairobi, Kenya, dedicated to empowering businesses with clarity, control, and growth. With deep expertise in local regulations and global best practices, we offer end-to-end financial management, from business registration and KRA compliance to daily finance operations and profitability advisory.</p>
-                <p>Our team of experienced financial professionals brings years of combined experience across multiple industries, ensuring that your business receives the highest quality of service and strategic guidance.</p>
-                <Link to="/about" className="btn-outline">Learn More About Us <i className="fas fa-arrow-right"></i></Link>
-              </div>
-              <div className="about-img">
-                <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600&q=80" alt="Financial consultant team" loading="lazy" />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Why Choose Us Section */}
+        {/* Why Us Section */}
         <section className="why-choose-us">
           <div className="container">
             <div className="section-header">
-              <h2 className="section-title">Why <span>Choose Us</span></h2>
-              <p className="section-subtitle">What makes M.K GATHU the trusted financial partner for Kenyan businesses</p>
+              <h2 className="section-title">Why <span>M.K. Gathu</span></h2>
+              <p className="section-subtitle">Trusted with the complex decisions.</p>
             </div>
             <div className="features-grid">
               <div className="feature-card">
+                <div className="feature-icon"><i className="fas fa-sitemap"></i></div>
+                <h3>One firm, six disciplines</h3>
+                <p>Compliance, strategy, investment research, and training under a single point of contact — no handing your file between firms.</p>
+              </div>
+              <div className="feature-card">
                 <div className="feature-icon"><i className="fas fa-certificate"></i></div>
-                <h3>Certified Experts</h3>
-                <p>Fully certified financial professionals with extensive experience in Kenyan tax laws and regulations.</p>
+                <h3>Credentialed, not just capable</h3>
+                <p>ICPAK-aligned practice and a US Tax Preparer credential mean the advice holds up to Kenyan and international scrutiny alike.</p>
               </div>
               <div className="feature-card">
-                <div className="feature-icon"><i className="fas fa-clock"></i></div>
-                <h3>Timely Delivery</h3>
-                <p>We guarantee on-time filing and reporting, helping you avoid KRA penalties and late fees.</p>
-              </div>
-              <div className="feature-card">
-                <div className="feature-icon"><i className="fas fa-shield-alt"></i></div>
-                <h3>100% Confidential</h3>
-                <p>Your financial data is safe with us. We maintain strict confidentiality and data protection standards.</p>
-              </div>
-              <div className="feature-card">
-                <div className="feature-icon"><i className="fas fa-headset"></i></div>
-                <h3>24/7 Support</h3>
-                <p>Round-the-clock support for urgent financial matters and KRA inquiries.</p>
-              </div>
-              <div className="feature-card">
-                <div className="feature-icon"><i className="fas fa-chart-line"></i></div>
-                <h3>Proven Results</h3>
-                <p>98% KRA compliance rate and 40% average profit increase for our clients.</p>
-              </div>
-              <div className="feature-card">
-                <div className="feature-icon"><i className="fas fa-hand-holding-usd"></i></div>
-                <h3>Affordable Pricing</h3>
-                <p>Competitive rates tailored for Kenyan SMEs and startups.</p>
+                <div className="feature-icon"><i className="fas fa-rocket"></i></div>
+                <h3>Built for where money is moving</h3>
+                <p>A dedicated division for freelancers, remote workers, and digital asset holders — the parts of the economy most firms still ignore.</p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* KRA & Tax Compliance Section */}
-        <section className="tax-section">
+        {/* Mission / Vision Section */}
+        <section className="mission-section">
           <div className="container">
             <div className="section-header">
-              <h2 className="section-title">KRA & Tax <span>Compliance Simplified</span></h2>
-              <p className="section-subtitle">We take the stress out of Kenya Revenue Authority filings. Stay compliant and avoid penalties.</p>
+              <h2 className="section-title">Our <span>Purpose</span></h2>
+              <p className="section-subtitle">Why the firm exists — and where it's headed.</p>
             </div>
-            <div className="tax-showcase">
-              <div className="tax-content">
-                <ul className="list-check">
-                  <li><i className="fas fa-check-circle"></i> VAT & Excise Returns Filing</li>
-                  <li><i className="fas fa-check-circle"></i> iTax troubleshooting & KRA PIN registration</li>
-                  <li><i className="fas fa-check-circle"></i> Tax Health Certificates & Compliance checks</li>
-                  <li><i className="fas fa-check-circle"></i> Monthly & annual filings with precision</li>
-                  <li><i className="fas fa-check-circle"></i> ETR machine installation and support</li>
-                  <li><i className="fas fa-check-circle"></i> KRA audit representation</li>
-                </ul>
-                <Link to="/contact" className="btn-gold">
-                  <i className="fas fa-file-signature"></i> Get KRA Support →
-                </Link>
+            <div className="mission-grid">
+              <div className="mission-card">
+                <span className="mission-tag">Mission</span>
+                <h3>Practical consulting. Real financial performance.</h3>
+                <p>To help organizations improve financial performance through practical consulting, financial analysis, professional training, and data-driven decision-making.</p>
               </div>
-              <div className="tax-image">
-                <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=700&q=80" alt="KRA tax compliance" loading="lazy" />
+              <div className="mission-card">
+                <span className="mission-tag">Vision</span>
+                <h3>One of East Africa's most respected advisory firms.</h3>
+                <p>To build M.K. Gathu Consultancy into one of East Africa's most respected advisory firms — delivering finance, strategy, business transformation, and corporate training to SMEs, corporates, NGOs, and public institutions.</p>
+              </div>
+            </div>
+            <div className="values-section">
+              <h4>Our Values</h4>
+              <div className="values-grid">
+                {values.map((value, index) => (
+                  <div key={index} className="value-chip">
+                    <i className={value.icon}></i>
+                    {value.label}
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </section>
 
-        {/* Testimonials Preview */}
-        <section className="testimonials-preview">
+        {/* Insights Section */}
+        <section className="insights-section">
           <div className="container">
             <div className="section-header">
-              <h2 className="section-title">What Our <span>Clients Say</span></h2>
-              <p className="section-subtitle">Real stories from businesses we've helped transform</p>
+              <h2 className="section-title">Recent <span>Insights</span></h2>
+              <p className="section-subtitle">Notes on tax, markets, and business strategy — written for the decisions our clients are actually facing.</p>
             </div>
-            <div className="testimonials-grid">
-              <div className="testimonial-card">
-                <i className="fas fa-quote-left"></i>
-                <p>"M.K GATHU transformed our financial records and ensured full KRA compliance. Our profitability soared within 6 months. Their attention to detail and proactive advice has been invaluable."</p>
-                <h4>— Njeri K., Startup Founder</h4>
-                <div className="rating">★★★★★</div>
-              </div>
-              <div className="testimonial-card">
-                <i className="fas fa-quote-left"></i>
-                <p>"Professional payroll & debt tracking services. Their advisory played a huge role in securing our business loan. I highly recommend their comprehensive financial management."</p>
-                <h4>— James M., Retail Chain MD</h4>
-                <div className="rating">★★★★★</div>
-              </div>
-              <div className="testimonial-card">
-                <i className="fas fa-quote-left"></i>
-                <p>"The team at M.K GATHU helped us navigate complex KRA requirements and set up proper accounting systems. Now we have clear financial visibility and peace of mind."</p>
-                <h4>— Dr. Sarah W., Healthcare CEO</h4>
-                <div className="rating">★★★★★</div>
-              </div>
-            </div>
-            <div className="view-all-link">
-              <Link to="/reviews" className="btn-outline">Read All Testimonials <i className="fas fa-arrow-right"></i></Link>
+            <div className="insights-grid">
+              {insights.map((item, index) => (
+                <div key={index} className="insight-card">
+                  <span className="insight-tag">{item.tag}</span>
+                  <h3>{item.title}</h3>
+                  <p>{item.desc}</p>
+                  <a href={item.link} className="insight-link">Ask us about this <i className="fas fa-arrow-right"></i></a>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* Call to Action Section */}
-        <section className="cta-section">
+        <section className="cta-section" id="contact">
           <div className="container">
             <div className="cta-content">
-              <h2>Ready to Transform Your Business Finances?</h2>
-              <p>Join over 500 Kenyan businesses that trust M.K GATHU for their financial management needs.</p>
+              <h2>Let's find the right division for what you're facing.</h2>
+              <p>Tell us what you're working on — a filing deadline, an expansion decision, or a portfolio question — and we'll route it to the right people.</p>
               <div className="cta-buttons">
-                <Link to="/contact" className="btn-gold">
-                  <i className="fas fa-calendar-check"></i> Book Free Consultation
-                </Link>
-                <Link to="/services" className="btn-outline">
-                  <i className="fas fa-info-circle"></i> Learn More
+                <a href="mailto:gathukamau23@gmail.com" className="btn-gold">
+                  <i className="fas fa-envelope"></i> Email Us
+                </a>
+                <a href="https://wa.me/254762610912" target="_blank" rel="noopener noreferrer" className="btn-outline">
+                  <i className="fab fa-whatsapp"></i> Chat on WhatsApp
+                </a>
+                <Link to="/contact" className="btn-outline">
+                  <i className="fas fa-paper-plane"></i> Send a Message
                 </Link>
               </div>
             </div>

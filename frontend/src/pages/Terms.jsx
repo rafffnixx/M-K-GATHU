@@ -6,8 +6,8 @@ export default function Terms() {
   return (
     <>
       <SEO 
-        title="Terms & Conditions - M.K GATHU Financial Consulting"
-        description="Read the terms and conditions for using M.K GATHU Financial Consulting services. Learn about our service agreements, fees, confidentiality, and client responsibilities."
+        title="Terms & Conditions — M.K. Gathu Consultancy"
+        description="Read the terms and conditions for using M.K. Gathu Consultancy services. Learn about our service agreements, fees, confidentiality, and client responsibilities."
         path="/terms"
         noIndex={true}
       />
@@ -29,25 +29,25 @@ export default function Terms() {
 
               <div className="terms-section">
                 <h2><i className="fas fa-handshake"></i> 1. Agreement to Terms</h2>
-                <p>By accessing or using the services of M.K GATHU Financial Consulting ("we," "our," "us"), you agree to be bound by these Terms and Conditions. If you disagree with any part of these terms, you may not access our services.</p>
+                <p>By accessing or using the services of M.K. Gathu Consultancy ("we," "our," "us"), you agree to be bound by these Terms and Conditions. If you disagree with any part of these terms, you may not access our services.</p>
               </div>
 
               <div className="terms-section">
                 <h2><i className="fas fa-building"></i> 2. About Our Services</h2>
-                <p>M.K GATHU Financial Consulting provides professional financial consulting services including but not limited to:</p>
+                <p>M.K. Gathu Consultancy provides professional financial and business advisory services including but not limited to:</p>
                 <ul>
-                  <li><i className="fas fa-check-circle"></i> Business registration and start-up support</li>
-                  <li><i className="fas fa-check-circle"></i> Tax and KRA compliance services</li>
-                  <li><i className="fas fa-check-circle"></i> Payroll management and processing</li>
-                  <li><i className="fas fa-check-circle"></i> Debt tracking and management</li>
-                  <li><i className="fas fa-check-circle"></i> Financial reporting and analysis</li>
-                  <li><i className="fas fa-check-circle"></i> Business advisory and strategy</li>
+                  <li><i className="fas fa-chart-pie"></i> <strong>Financial Advisory</strong> — wealth structuring, investment advisory, fractional CFO</li>
+                  <li><i className="fas fa-handshake"></i> <strong>Business Advisory</strong> — strategy, market entry, operational optimization</li>
+                  <li><i className="fas fa-file-invoice"></i> <strong>Accounting & Compliance</strong> — bookkeeping, KRA compliance, payroll, audit</li>
+                  <li><i className="fas fa-chart-line"></i> <strong>Investment Intelligence</strong> — portfolio construction, equity research, market analysis</li>
+                  <li><i className="fas fa-globe"></i> <strong>Digital Economy Advisory</strong> — freelance tax, US tax preparation, cross-border income</li>
+                  <li><i className="fas fa-graduation-cap"></i> <strong>Corporate Training</strong> — Excel, financial modeling, finance for non-finance managers</li>
                 </ul>
               </div>
 
               <div className="terms-section">
                 <h2><i className="fas fa-file-signature"></i> 3. Service Agreement</h2>
-                <p>All services provided by M.K GATHU Financial Consulting are subject to a separate Service Agreement signed between the client and our firm. These Terms and Conditions supplement but do not replace specific service contracts.</p>
+                <p>All services provided by M.K. Gathu Consultancy are subject to a separate Service Agreement signed between the client and our firm. These Terms and Conditions supplement but do not replace specific service contracts.</p>
                 <p>Key provisions of our service agreements include:</p>
                 <ul>
                   <li><i className="fas fa-check-circle"></i> Scope of services to be provided</li>
@@ -62,10 +62,10 @@ export default function Terms() {
                 <h2><i className="fas fa-money-bill-wave"></i> 4. Fees and Payments</h2>
                 <p>Our fees are structured as follows:</p>
                 <ul>
-                  <li><i className="fas fa-check-circle"></i> <strong>One-time setup fees</strong> - Charged for initial registration and setup services</li>
-                  <li><i className="fas fa-check-circle"></i> <strong>Monthly retainer fees</strong> - For ongoing management and compliance services</li>
-                  <li><i className="fas fa-check-circle"></i> <strong>Project-based fees</strong> - For specific advisory or consulting projects</li>
-                  <li><i className="fas fa-check-circle"></i> <strong>Hourly rates</strong> - For ad-hoc consulting and support</li>
+                  <li><i className="fas fa-check-circle"></i> <strong>One-time setup fees</strong> — Charged for initial registration and setup services</li>
+                  <li><i className="fas fa-check-circle"></i> <strong>Monthly retainer fees</strong> — For ongoing management and compliance services</li>
+                  <li><i className="fas fa-check-circle"></i> <strong>Project-based fees</strong> — For specific advisory or consulting projects</li>
+                  <li><i className="fas fa-check-circle"></i> <strong>Hourly rates</strong> — For ad-hoc consulting and support</li>
                 </ul>
                 <p>All fees are quoted in Kenyan Shillings (KES) unless otherwise specified. Payment is due within 14 days of invoice date unless alternative arrangements are made in writing.</p>
               </div>
@@ -97,7 +97,7 @@ export default function Terms() {
 
               <div className="terms-section">
                 <h2><i className="fas fa-exclamation-triangle"></i> 7. Limitation of Liability</h2>
-                <p>To the maximum extent permitted by law, M.K GATHU Financial Consulting shall not be liable for:</p>
+                <p>To the maximum extent permitted by law, M.K. Gathu Consultancy shall not be liable for:</p>
                 <ul>
                   <li><i className="fas fa-check-circle"></i> Indirect, incidental, or consequential damages</li>
                   <li><i className="fas fa-check-circle"></i> Loss of profits, revenue, or business opportunities</li>
@@ -139,7 +139,7 @@ export default function Terms() {
                 <ul className="contact-list">
                   <li><i className="fas fa-envelope"></i> Email: <a href="mailto:gathukamau23@gmail.com">gathukamau23@gmail.com</a></li>
                   <li><i className="fas fa-phone"></i> Phone: <a href="tel:+254762610912">+254 762 610 912</a></li>
-                  <li><i className="fab fa-whatsapp"></i> WhatsApp: <a href="https://wa.me/254762610912">+254 762 610 912</a></li>
+                  <li><i className="fab fa-whatsapp"></i> WhatsApp: <a href="https://wa.me/254762610912" target="_blank" rel="noopener noreferrer">+254 762 610 912</a></li>
                   <li><i className="fas fa-map-marker-alt"></i> Address: Westlands, Nairobi, Kenya</li>
                 </ul>
               </div>

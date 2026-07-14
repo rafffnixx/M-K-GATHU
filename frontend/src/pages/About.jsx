@@ -3,19 +3,47 @@ import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
 
 export default function About() {
+  // Values with icons instead of numbers
+  const values = [
+    { icon: 'fas fa-shield-alt', label: 'Integrity' },
+    { icon: 'fas fa-trophy', label: 'Excellence' },
+    { icon: 'fas fa-lightbulb', label: 'Practical Solutions' },
+    { icon: 'fas fa-graduation-cap', label: 'Continuous Learning' },
+    { icon: 'fas fa-star', label: 'Client Success' },
+    { icon: 'fas fa-handshake', label: 'Professionalism' },
+    { icon: 'fas fa-rocket', label: 'Innovation' },
+    { icon: 'fas fa-clipboard-check', label: 'Accountability' }
+  ];
+
+  const whyItems = [
+    { icon: 'fas fa-sitemap', title: 'One firm, six disciplines', desc: 'Compliance, strategy, investment research, and training under a single point of contact — no handing your file between firms.' },
+    { icon: 'fas fa-certificate', title: 'Credentialed, not just capable', desc: 'ICPAK-aligned practice and a US Tax Preparer credential mean the advice holds up to Kenyan and international scrutiny alike.' },
+    { icon: 'fas fa-rocket', title: 'Built for where money is moving', desc: 'A dedicated division for freelancers, remote workers, and digital asset holders — the parts of the economy most firms still ignore.' }
+  ];
+
+  // Divisions with icons for preview
+  const divisions = [
+    { icon: 'fas fa-chart-pie', title: 'Financial Advisory', tagline: 'Clarity for your money, structure for your future.' },
+    { icon: 'fas fa-handshake', title: 'Business Advisory', tagline: 'Strategy that turns growth into results.' },
+    { icon: 'fas fa-file-invoice', title: 'Accounting & Compliance', tagline: 'The foundation every business is built on.' },
+    { icon: 'fas fa-chart-line', title: 'Investment Intelligence', tagline: 'Informed capital. Deliberate decisions.' },
+    { icon: 'fas fa-globe', title: 'Digital Economy Advisory', tagline: 'Built for the new way people earn.' },
+    { icon: 'fas fa-graduation-cap', title: 'Corporate Training', tagline: 'Building financial fluency, one team at a time.' }
+  ];
+
   return (
     <>
       <SEO 
-        title="About Us - Premier Financial Consulting in Kenya"
-        description="M.K GATHU Financial Consulting: Expert financial advisors in Nairobi. We help Kenyan businesses with registration, KRA compliance, payroll, and growth strategies. Trusted by 500+ businesses."
+        title="About M.K. Gathu Consultancy — Business Intelligence · Financial Advisory · Strategic Consulting"
+        description="Nairobi-based financial and business advisory firm trusted by 500+ businesses — financial advisory, business strategy, accounting & compliance, investment intelligence, digital economy advisory, and corporate training. ICPAK-aligned with US Tax Preparer credential."
         path="/about"
       />
       
       <div className="about-page">
         <section className="page-header">
           <div className="container">
-            <h1>About <span>M.K GATHU</span></h1>
-            <p>Kenya's trusted financial partner with a gold standard of service.</p>
+            <h1>About <span>M.K. Gathu Consultancy</span></h1>
+            <p>Business Intelligence · Financial Advisory · Strategic Consulting</p>
           </div>
         </section>
 
@@ -24,43 +52,44 @@ export default function About() {
             <div className="about-flex">
               <div className="about-text">
                 <h2>Who We Are</h2>
-                <p>We are a premier financial consulting firm based in Nairobi, Kenya, dedicated to empowering businesses with clarity, control, and growth. With deep expertise in local regulations and global best practices, we offer end-to-end financial management from business registration and KRA compliance to daily finance operations and profitability advisory.</p>
+                <p>M.K. Gathu Consultancy is a Nairobi-based financial and business advisory firm trusted by 500+ businesses and professionals. We combine deep local expertise — KRA, ICPAK, NSE — with specialist international support, including US tax filing for freelancers and remote workers.</p>
+                <p>We are structured as a multi-disciplinary firm with six integrated divisions, ensuring that a bookkeeping client can access investment research, and a business advisory client can call on tax strategy, without ever leaving M.K. Gathu Consultancy.</p>
                 
                 <h2>Our Mission</h2>
-                <p>To provide gold-standard financial consulting that transforms Kenyan businesses from registration to profitability through expert guidance, compliance assurance, and strategic advisory.</p>
+                <p>To help organizations improve financial performance through practical consulting, financial analysis, professional training, and data-driven decision-making.</p>
                 
                 <h2>Our Vision</h2>
-                <p>To be Kenya's most trusted financial partner, recognized for driving business success through innovative financial solutions and unwavering commitment to client prosperity.</p>
+                <p>To build M.K. Gathu Consultancy into one of East Africa's most respected advisory firms — delivering finance, strategy, business transformation, and corporate training to SMEs, corporates, NGOs, and public institutions.</p>
                 
                 <div className="about-stats">
                   <div className="stat-item">
                     <span className="stat-number">500+</span>
-                    <span className="stat-label">Businesses Served</span>
+                    <span className="stat-label">Businesses & Professionals Served</span>
                   </div>
                   <div className="stat-item">
-                    <span className="stat-number">98%</span>
-                    <span className="stat-label">KRA Compliance</span>
+                    <span className="stat-number">ICPAK</span>
+                    <span className="stat-label">Aligned Practice</span>
                   </div>
                   <div className="stat-item">
-                    <span className="stat-number">10+</span>
-                    <span className="stat-label">Years Experience</span>
+                    <span className="stat-number">US</span>
+                    <span className="stat-label">Tax Preparer Credentialed</span>
                   </div>
                   <div className="stat-item">
-                    <span className="stat-number">100%</span>
-                    <span className="stat-label">Client Satisfaction</span>
+                    <span className="stat-number">NSE & CMA</span>
+                    <span className="stat-label">Research Informed</span>
                   </div>
                 </div>
                 
                 <div className="about-contact">
-                  <p><i className="fas fa-map-marker-alt"></i> <strong>Location:</strong> Westlands, Nairobi, Kenya | Serving clients countrywide</p>
+                  <p><i className="fas fa-map-marker-alt"></i> <strong>Location:</strong> Westlands, Nairobi, Kenya</p>
                   <p><i className="fas fa-envelope"></i> <strong>Email:</strong> <a href="mailto:gathukamau23@gmail.com">gathukamau23@gmail.com</a></p>
                   <p><i className="fas fa-phone"></i> <strong>Phone:</strong> <a href="tel:+254762610912">+254 762 610 912</a></p>
-                  <p><i className="fab fa-whatsapp"></i> <strong>WhatsApp:</strong> <a href="https://wa.me/254762610912">+254 762 610 912</a></p>
+                  <p><i className="fab fa-whatsapp"></i> <strong>WhatsApp:</strong> <a href="https://wa.me/254762610912" target="_blank" rel="noopener noreferrer">+254 762 610 912</a></p>
                 </div>
                 
                 <div className="about-cta">
                   <Link to="/contact" className="btn-gold">
-                    <i className="fas fa-calendar-check"></i> Book a Free Consultation
+                    <i className="fas fa-calendar-check"></i> Book a Consultation
                   </Link>
                 </div>
               </div>
@@ -68,12 +97,12 @@ export default function About() {
               <div className="about-img">
                 <img 
                   src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600&q=80" 
-                  alt="Professional financial consultant team in Kenya" 
+                  alt="Professional financial consultant team in Nairobi, Kenya" 
                   loading="lazy" 
                 />
                 <img 
                   src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80" 
-                  alt="Financial consulting and tax compliance services in Kenya" 
+                  alt="Financial advisory and strategic consulting services in Kenya" 
                   loading="lazy" 
                   style={{marginTop: '24px'}} 
                 />
@@ -82,74 +111,64 @@ export default function About() {
           </div>
         </section>
 
-        <section className="values-section">
+        <section className="about-values-section">
           <div className="container">
             <div className="section-header">
               <h2 className="section-title">Our <span>Core Values</span></h2>
               <p className="section-subtitle">The principles that guide our service delivery</p>
             </div>
-            <div className="values-grid">
-              <div className="value-card">
-                <i className="fas fa-gem"></i>
-                <h3>Integrity</h3>
-                <p>We operate with complete transparency and ethical standards in all client dealings.</p>
-              </div>
-              <div className="value-card">
-                <i className="fas fa-chart-line"></i>
-                <h3>Excellence</h3>
-                <p>We deliver gold-standard financial services that exceed client expectations.</p>
-              </div>
-              <div className="value-card">
-                <i className="fas fa-handshake"></i>
-                <h3>Partnership</h3>
-                <p>We work alongside our clients as dedicated partners in their growth journey.</p>
-              </div>
-              <div className="value-card">
-                <i className="fas fa-lightbulb"></i>
-                <h3>Innovation</h3>
-                <p>We leverage modern financial tools and strategies for optimal results.</p>
-              </div>
+            <div className="about-values-grid">
+              {values.map((value, index) => (
+                <div key={index} className="about-value-card">
+                  <div className="value-icon-wrapper">
+                    <i className={value.icon}></i>
+                  </div>
+                  <h3>{value.label}</h3>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        <section className="team-section">
+        <section className="why-section">
           <div className="container">
             <div className="section-header">
-              <h2 className="section-title">Why <span>Choose Us</span></h2>
-              <p className="section-subtitle">What makes us different from other financial consulting firms</p>
+              <h2 className="section-title">Why <span>M.K. Gathu</span></h2>
+              <p className="section-subtitle">Trusted with the complex decisions.</p>
             </div>
-            <div className="features-grid">
-              <div className="feature-card">
-                <div className="feature-icon"><i className="fas fa-certificate"></i></div>
-                <h3>Certified Experts</h3>
-                <p>Fully certified financial professionals with extensive experience in Kenyan tax laws and regulations.</p>
-              </div>
-              <div className="feature-card">
-                <div className="feature-icon"><i className="fas fa-clock"></i></div>
-                <h3>Timely Delivery</h3>
-                <p>We guarantee on-time filing and reporting, helping you avoid KRA penalties and late fees.</p>
-              </div>
-              <div className="feature-card">
-                <div className="feature-icon"><i className="fas fa-shield-alt"></i></div>
-                <h3>100% Confidential</h3>
-                <p>Your financial data is safe with us. We maintain strict confidentiality and data protection standards.</p>
-              </div>
-              <div className="feature-card">
-                <div className="feature-icon"><i className="fas fa-headset"></i></div>
-                <h3>24/7 Support</h3>
-                <p>Round-the-clock support for urgent financial matters and KRA inquiries.</p>
-              </div>
-              <div className="feature-card">
-                <div className="feature-icon"><i className="fas fa-chart-line"></i></div>
-                <h3>Proven Results</h3>
-                <p>98% KRA compliance rate and 40% average profit increase for our clients.</p>
-              </div>
-              <div className="feature-card">
-                <div className="feature-icon"><i className="fas fa-hand-holding-usd"></i></div>
-                <h3>Affordable Pricing</h3>
-                <p>Competitive rates tailored for Kenyan SMEs and startups.</p>
-              </div>
+            <div className="why-grid">
+              {whyItems.map((item, index) => (
+                <div key={index} className="why-card">
+                  <div className="why-icon"><i className={item.icon}></i></div>
+                  <h3>{item.title}</h3>
+                  <p>{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="divisions-preview">
+          <div className="container">
+            <div className="section-header">
+              <h2 className="section-title">Our <span>Six Divisions</span></h2>
+              <p className="section-subtitle">One firm. Six divisions. Each built around a specific kind of client.</p>
+            </div>
+            <div className="divisions-grid">
+              {divisions.map((division, index) => (
+                <div key={index} className="division-item">
+                  <div className="division-icon-wrapper">
+                    <i className={division.icon}></i>
+                  </div>
+                  <h3>{division.title}</h3>
+                  <p className="division-tagline">{division.tagline}</p>
+                </div>
+              ))}
+            </div>
+            <div className="divisions-cta">
+              <Link to="/services" className="btn-outline">
+                Explore All Divisions <i className="fas fa-arrow-right"></i>
+              </Link>
             </div>
           </div>
         </section>

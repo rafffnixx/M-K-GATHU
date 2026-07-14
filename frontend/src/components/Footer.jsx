@@ -4,24 +4,24 @@ import './Footer.css';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  const logoSrc = "/logo-white.png";
+  const logoSrc = "/mkg-logo.jpg";
 
   const quickLinks = [
-    { path: '/', label: 'Home' },
-    { path: '/services', label: 'Services' },
-    { path: '/portfolio', label: 'Success Stories' },
-    { path: '/reviews', label: 'Testimonials' },
-    { path: '/about', label: 'About' },
-    { path: '/contact', label: 'Contact' }
+    { path: '/', label: 'Home', icon: 'fas fa-home' },
+    { path: '/services', label: 'Divisions', icon: 'fas fa-th-large' },
+    { path: '/portfolio', label: 'Success Stories', icon: 'fas fa-briefcase' },
+    { path: '/reviews', label: 'Testimonials', icon: 'fas fa-star' },
+    { path: '/about', label: 'About', icon: 'fas fa-info-circle' },
+    { path: '/contact', label: 'Contact', icon: 'fas fa-envelope' }
   ];
 
-  const services = [
-    { path: '/service/business-startup', label: 'Business Start-Up Support' },
-    { path: '/service/tax-compliance', label: 'Tax & KRA Compliance' },
-    { path: '/service/payroll', label: 'Payroll Services' },
-    { path: '/service/debt-tracking', label: 'Payments & Debt Tracking' },
-    { path: '/service/financial-reports', label: 'Financial Reports' },
-    { path: '/service/business-advisory', label: 'Business Advisory' }
+  const divisions = [
+    { path: '/service/financial-advisory', label: 'Financial Advisory', icon: 'fas fa-chart-pie' },
+    { path: '/service/business-advisory', label: 'Business Advisory', icon: 'fas fa-handshake' },
+    { path: '/service/accounting-compliance', label: 'Accounting & Compliance', icon: 'fas fa-file-invoice' },
+    { path: '/service/investment-intelligence', label: 'Investment Intelligence', icon: 'fas fa-chart-line' },
+    { path: '/service/digital-economy', label: 'Digital Economy Advisory', icon: 'fas fa-globe' },
+    { path: '/service/corporate-training', label: 'Corporate Training', icon: 'fas fa-graduation-cap' }
   ];
 
   const handleNavClick = () => {
@@ -35,16 +35,15 @@ export default function Footer() {
           {/* About Column - Logo + Company Name + Description */}
           <div className="footer-about">
             <div className="footer-logo">
-              <img src={logoSrc} alt="M.K GATHU Logo" className="footer-logo-image" />
+              <img src={logoSrc} alt="M.K. Gathu Consultancy Logo" className="footer-logo-image" />
               <div className="footer-logo-text">
-                <h3>M.K GATHU</h3>
-                <p>FINANCIAL CONSULTING</p>
-                <p>• KENYA</p>
+                <h3>M.K. Gathu Consultancy</h3>
+                <p>Business Intelligence · Financial Advisory · Strategic Consulting</p>
               </div>
             </div>
             <p className="footer-description">
-              Premier financial consulting firm based in Nairobi, Kenya, dedicated to empowering 
-              businesses with clarity, control, and growth from registration to profitability.
+              Nairobi-based financial and business advisory firm trusted by 500+ businesses and professionals. 
+              ICPAK-aligned practice with US Tax Preparer credential. Serving Kenya and worldwide.
             </p>
             <div className="social-links">
               <a href="https://wa.me/254762610912" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
@@ -72,27 +71,27 @@ export default function Footer() {
               {quickLinks.map((link) => (
                 <li key={link.path}>
                   <Link to={link.path} onClick={handleNavClick}>
-                    <i className="fas fa-chevron-right"></i> {link.label}
+                    <i className={link.icon}></i> {link.label}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Services Column */}
+          {/* Divisions Column */}
           <div className="footer-links-col">
-            <h4>Our Services</h4>
+            <h4>Our Divisions</h4>
             <ul>
-              {services.map((service) => (
-                <li key={service.path}>
-                  <Link to={service.path} onClick={handleNavClick}>
-                    <i className="fas fa-chevron-right"></i> {service.label}
+              {divisions.map((division) => (
+                <li key={division.path}>
+                  <Link to={division.path} onClick={handleNavClick}>
+                    <i className={division.icon}></i> {division.label}
                   </Link>
                 </li>
               ))}
               <li>
                 <Link to="/services" onClick={handleNavClick}>
-                  <i className="fas fa-chevron-right"></i> View All Services
+                  <i className="fas fa-arrow-right"></i> View All Divisions
                 </Link>
               </li>
             </ul>
@@ -105,28 +104,24 @@ export default function Footer() {
               <li>
                 <i className="fas fa-map-marker-alt"></i>
                 <div>
-                  <strong></strong>
                   <span>Westlands, Nairobi, Kenya</span>
                 </div>
               </li>
               <li>
                 <i className="fas fa-phone"></i>
                 <div>
-                  <strong></strong>
                   <a href="tel:+254762610912">+254 762 610 912</a>
                 </div>
               </li>
               <li>
                 <i className="fab fa-whatsapp"></i>
                 <div>
-                  <strong></strong>
-                  <a href="https://wa.me/254762610912">+254 762 610 912</a>
+                  <a href="https://wa.me/254762610912" target="_blank" rel="noopener noreferrer">+254 762 610 912</a>
                 </div>
               </li>
               <li>
                 <i className="fas fa-envelope"></i>
                 <div>
-                  <strong></strong>
                   <a href="mailto:gathukamau23@gmail.com">gathukamau23@gmail.com</a>
                 </div>
               </li>
@@ -134,7 +129,7 @@ export default function Footer() {
                 <i className="fas fa-clock"></i>
                 <div>
                   <strong>Business Hours</strong>
-                  <span>Mon-Fri: 8:00AM – 5:00PM</span>
+                  <span>Mon-Fri: 8:00AM – 5:00PM (EAT)</span>
                   <span>Sat: 9:00AM – 1:00PM</span>
                   <span>Sun: Closed</span>
                 </div>
@@ -146,7 +141,7 @@ export default function Footer() {
         <div className="footer-bottom">
           <div className="footer-bottom-content">
             <div className="footer-copyright">
-              <p>&copy; {currentYear} M.K GATHU Financial Consulting, Professional Financial Management in Kenya. All rights reserved.</p>
+              <p>&copy; {currentYear} M.K. Gathu Consultancy. All rights reserved.</p>
             </div>
             <div className="footer-legal">
               <Link to="/terms" onClick={handleNavClick}>Terms of Service</Link>
@@ -169,7 +164,7 @@ export default function Footer() {
 
       {/* WhatsApp Chat Button */}
       <a 
-        href="https://wa.me/254762610912?text=Hello%20M.K%20GATHU%20Consulting%2C%20I%20need%20expert%20financial%20advice." 
+        href="https://wa.me/254762610912?text=Hello%20M.K.%20Gathu%20Consultancy%2C%20I%20need%20expert%20financial%20advice." 
         className="whatsapp-chat"
         target="_blank" 
         rel="noopener noreferrer"

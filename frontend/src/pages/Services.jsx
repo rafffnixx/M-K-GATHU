@@ -5,75 +5,54 @@ import SEO from '../components/SEO';
 export default function Services() {
   const navigate = useNavigate();
 
-  const coreServices = [
+  const divisions = [
     { 
-      id: "business-startup",
-      icon: "fas fa-rocket", 
-      title: "Business Start-Up Support", 
-      desc: "Business registration, permits, licensing, and structuring for new ventures in Kenya." 
-    },
-    { 
-      id: "daily-money-management",
-      icon: "fas fa-wallet", 
-      title: "Daily Money Management", 
-      desc: "Real-time cash flow tracking, expense monitoring, and operational finance oversight." 
-    },
-    { 
-      id: "debt-tracking",
-      icon: "fas fa-credit-card", 
-      title: "Payments & Debt Tracking", 
-      desc: "Automated invoicing, accounts receivable, aging reports, and debt recovery strategies." 
-    },
-    { 
-      id: "payroll",
-      icon: "fas fa-users", 
-      title: "Payroll Services", 
-      desc: "Payroll processing, statutory deductions, payslips, NSSF, NHIF, and leave management." 
-    },
-    { 
-      id: "tax-compliance",
-      icon: "fas fa-file-invoice", 
-      title: "Tax & KRA Compliance", 
-      desc: "VAT, withholding tax, income tax filing, KRA PIN updates, and audit support." 
-    },
-    { 
-      id: "financial-reports",
+      id: "financial-advisory",
       icon: "fas fa-chart-pie", 
-      title: "Financial Reports", 
-      desc: "Profit & loss, balance sheets, management accounts, and insightful dashboards." 
+      title: "Financial Advisory", 
+      tagline: "Clarity for your money, structure for your future.",
+      desc: "We help individuals and business owners understand, structure, and grow their finances — from personal wealth planning to full CFO-level oversight for companies that need financial leadership without the full-time cost.",
+      pills: ["Personal Finance Advisory", "Wealth Structuring", "Investment Advisory", "Virtual & Fractional CFO Services", "Cash Flow Management", "Debt Tracking & Recovery", "Financial Modeling", "AI & Automation in Finance"]
     },
     { 
       id: "business-advisory",
       icon: "fas fa-handshake", 
       title: "Business Advisory", 
-      desc: "Growth strategies, pricing guidance, financial forecasting & investment readiness." 
+      tagline: "Strategy that turns growth into results.",
+      desc: "For SMEs and scaling businesses, we provide the strategic thinking usually reserved for large corporates — market entry planning, pricing strategy, and operational optimization — so you grow with a plan, not by guesswork.",
+      pills: ["Business Strategy Consulting", "Process Optimization", "Market Entry Advisory", "Feasibility Studies", "Pricing Strategy", "Expansion Planning"]
     },
     { 
-      id: "kra-compliance-plus",
-      icon: "fas fa-shield-alt", 
-      title: "KRA Compliance Plus", 
-      desc: "ETR, iTax support, tax health checks and representation before KRA." 
-    }
-  ];
-
-  const advisoryServices = [
+      id: "accounting-compliance",
+      icon: "fas fa-file-invoice", 
+      title: "Accounting & Compliance", 
+      tagline: "The foundation every business is built on.",
+      desc: "Accurate books, timely filings, and audit-ready records — delivered by a credentialed team so you stay compliant while you focus on running your business.",
+      pills: ["Business Registration", "KRA PIN & VAT Setup", "Business Bank Account Setup", "Bookkeeping & M-Pesa Reconciliation", "ERP Systems Implementation", "Payroll — PAYE, NSSF, NHIF", "VAT, Income, Rental & Withholding Tax Filing", "Excise, Turnover & Capital Gains Tax", "Audit Preparation", "Internal Controls", "Profit & Loss / Performance Reporting"]
+    },
     { 
-      id: "growth-roadmaps",
+      id: "investment-intelligence",
       icon: "fas fa-chart-line", 
-      title: "Growth Roadmaps", 
-      desc: "Data-driven expansion plans, market entry & financial forecasting." 
+      title: "Investment Intelligence", 
+      tagline: "Informed capital. Deliberate decisions.",
+      desc: "We bring institutional-grade research and analysis to individual and business investors — portfolio construction, equity research, and real estate investment analysis grounded in Kenyan and global market realities.",
+      pills: ["Portfolio Construction", "Equity Research", "Market Analysis", "Treasury Advisory", "Real Estate Investment Analysis", "Capital Allocation Strategy"]
     },
     { 
-      id: "pricing-guidance",
-      icon: "fas fa-tags", 
-      title: "Pricing Guidance", 
-      desc: "Strategic pricing models to maximize margins and competitiveness." 
+      id: "digital-economy",
+      icon: "fas fa-globe", 
+      title: "Digital Economy Advisory", 
+      tagline: "Built for the new way people earn.",
+      desc: "Freelancers, remote workers, creators, and traders operate outside traditional financial systems — we built this division specifically for them, covering cross-border tax, digital asset research, and income structuring for the modern earner.",
+      pills: ["Freelancer Advisory", "Remote Worker Tax Strategy", "US Tax Preparation — Form 1040", "W-8BEN Setup for US Client Payments", "ITIN Application Assistance", "Foreign Earned Income Exclusion", "Self-Employment Tax & Schedule C", "International Payroll & Worker Classification", "Creator Economy Advisory", "FX Trader Risk Management", "Crypto / Digital Asset Research", "International Income Structuring"]
     },
     { 
-      id: "capital-funding",
-      icon: "fas fa-hand-holding-usd", 
-      title: "Capital & Funding", 
-      desc: "Liaison with banks, investors and grant readiness for Kenyan SMEs." 
+      id: "corporate-training",
+      icon: "fas fa-graduation-cap", 
+      title: "Corporate Training", 
+      tagline: "Building financial fluency, one team at a time.",
+      desc: "We train teams and individuals in the practical financial skills that drive better decisions — Excel, financial modeling, tax literacy, and finance fundamentals for managers who aren't finance professionals.",
+      pills: ["Excel Training", "Financial Modeling", "Tax Education", "Corporate Finance Training", "Business Analytics Training", "Finance for Non-Finance Managers"]
     }
   ];
 
@@ -85,16 +64,16 @@ export default function Services() {
   return (
     <>
       <SEO 
-        title="Our Services - Financial Consulting Kenya"
-        description="Comprehensive financial services for Kenyan businesses: business registration, KRA compliance, payroll, tax advisory, debt tracking, and strategic advisory. Get expert financial guidance today."
+        title="Our Divisions — M.K. Gathu Consultancy"
+        description="Six integrated divisions: Financial Advisory, Business Advisory, Accounting & Compliance, Investment Intelligence, Digital Economy Advisory, and Corporate Training. ICPAK-aligned with US Tax Preparer credential."
         path="/services"
       />
       
       <div className="services-page">
         <section className="page-header">
           <div className="container">
-            <h1>Our <span>Services</span></h1>
-            <p>Comprehensive financial solutions tailored for Kenyan businesses from startup to profitability.</p>
+            <h1>Our <span>Divisions</span></h1>
+            <p>Six divisions, one point of contact. Each built around a specific kind of client — from individuals structuring personal wealth to businesses navigating audits, market entry, or their first fractional CFO.</p>
           </div>
         </section>
 
@@ -105,39 +84,59 @@ export default function Services() {
               <div className="highlight-text">
                 <i className="fas fa-gem"></i>
                 <div>
-                  <h3>Expert Financial Guidance</h3>
-                  <p>Trusted by 500+ Kenyan businesses</p>
+                  <h3>One Firm. Six Divisions.</h3>
+                  <p>Trusted by 500+ businesses & professionals · ICPAK aligned · US Tax Preparer credentialed</p>
                 </div>
               </div>
               <Link to="/contact" className="btn-outline">
-                Free Consultation <i className="fas fa-arrow-right"></i>
+                Book a Consultation <i className="fas fa-arrow-right"></i>
               </Link>
             </div>
           </div>
         </div>
 
-        <section id="core-services" className="services-section">
+        {/* Divisions Section */}
+        <section id="divisions" className="divisions-section">
           <div className="container">
             <div className="section-header">
-              <h2 className="section-title">Core <span>Services</span></h2>
-              <p className="section-subtitle">Our primary financial solutions designed for business success</p>
+              <h2 className="section-title">Six Divisions, <span>One Point of Contact</span></h2>
+              <p className="section-subtitle">Every division is built around a specific kind of client — from individuals structuring personal wealth to businesses navigating audits, market entry, or their first fractional CFO.</p>
             </div>
-            <div className="services-grid">
-              {coreServices.map((service, index) => (
+            
+            <div className="divisions-list">
+              {divisions.map((division, index) => (
                 <div 
-                  className="service-card clickable" 
+                  className="division-card clickable" 
                   key={index}
-                  onClick={() => handleServiceClick(service.id)}
+                  onClick={() => handleServiceClick(division.id)}
                   role="button"
                   tabIndex={0}
                   onKeyPress={(e) => {
-                    if (e.key === 'Enter') handleServiceClick(service.id);
+                    if (e.key === 'Enter') handleServiceClick(division.id);
                   }}
                 >
-                  <div className="service-icon"><i className={service.icon}></i></div>
-                  <h3>{service.title}</h3>
-                  <p>{service.desc}</p>
-                  <div className="service-link">
+                  <div className="division-header">
+                    <div className="division-icon-wrapper">
+                      <i className={division.icon}></i>
+                    </div>
+                    <div className="division-title">
+                      <h3>{division.title}</h3>
+                      <span className="division-tagline">{division.tagline}</span>
+                    </div>
+                  </div>
+                  
+                  <p className="division-desc">{division.desc}</p>
+                  
+                  <div className="division-pills">
+                    {division.pills.slice(0, 6).map((pill, idx) => (
+                      <span key={idx} className="pill">{pill}</span>
+                    ))}
+                    {division.pills.length > 6 && (
+                      <span className="pill pill-more">+{division.pills.length - 6} more</span>
+                    )}
+                  </div>
+                  
+                  <div className="division-link">
                     Learn More <i className="fas fa-arrow-right"></i>
                   </div>
                 </div>
@@ -146,7 +145,8 @@ export default function Services() {
           </div>
         </section>
 
-        <section id="tax-compliance" className="tax-section">
+        {/* Tax & Compliance Section */}
+        <section className="tax-section">
           <div className="container">
             <div className="section-header">
               <h2 className="section-title">KRA & Tax <span>Compliance Simplified</span></h2>
@@ -159,9 +159,13 @@ export default function Services() {
                   <li><i className="fas fa-check-circle"></i> iTax troubleshooting & KRA PIN registration</li>
                   <li><i className="fas fa-check-circle"></i> Tax Health Certificates & Compliance checks</li>
                   <li><i className="fas fa-check-circle"></i> Monthly & annual filings with precision</li>
-                  <li><i className="fas fa-check-circle"></i> ETR machine support</li>
+                  <li><i className="fas fa-check-circle"></i> ETR machine installation and support</li>
                   <li><i className="fas fa-check-circle"></i> KRA audit representation</li>
+                  <li><i className="fas fa-check-circle"></i> ICPAK-aligned practice standards</li>
                 </ul>
+                <div className="tax-note">
+                  <p><i className="fas fa-info-circle"></i> "From registration to profitability — we handle your finances."</p>
+                </div>
                 <Link to="/contact" className="btn-gold">
                   <i className="fas fa-file-signature"></i> Get KRA Support →
                 </Link>
@@ -173,63 +177,28 @@ export default function Services() {
           </div>
         </section>
 
-        <section id="advisory" className="advisory-section">
-          <div className="container">
-            <div className="section-header">
-              <h2 className="section-title">Business <span>Advisory & Strategy</span></h2>
-              <p className="section-subtitle">Navigate financial complexities with expert guidance from registration to profitability.</p>
-            </div>
-            <div className="advisory-grid">
-              {advisoryServices.map((service, index) => (
-                <div 
-                  className="service-card clickable" 
-                  key={index}
-                  onClick={() => handleServiceClick(service.id)}
-                  role="button"
-                  tabIndex={0}
-                  onKeyPress={(e) => {
-                    if (e.key === 'Enter') handleServiceClick(service.id);
-                  }}
-                >
-                  <i className={service.icon + " service-icon"}></i>
-                  <h3>{service.title}</h3>
-                  <p>{service.desc}</p>
-                  <div className="service-link">
-                    Learn More <i className="fas fa-arrow-right"></i>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* Why Choose Our Services Section */}
         <section className="why-our-services">
           <div className="container">
             <div className="section-header">
-              <h2 className="section-title">Why Choose <span>Our Services</span></h2>
-              <p className="section-subtitle">What makes our financial solutions stand out</p>
+              <h2 className="section-title">Why Choose <span>M.K. Gathu</span></h2>
+              <p className="section-subtitle">Trusted with the complex decisions.</p>
             </div>
             <div className="why-grid">
               <div className="why-card">
-                <i className="fas fa-user-tie"></i>
-                <h4>Expert Team</h4>
-                <p>Certified professionals with years of experience</p>
+                <i className="fas fa-sitemap"></i>
+                <h4>One firm, six disciplines</h4>
+                <p>Compliance, strategy, investment research, and training under a single point of contact — no handing your file between firms.</p>
               </div>
               <div className="why-card">
-                <i className="fas fa-clock"></i>
-                <h4>Timely Delivery</h4>
-                <p>On-time filing and reporting guaranteed</p>
+                <i className="fas fa-certificate"></i>
+                <h4>Credentialed, not just capable</h4>
+                <p>ICPAK-aligned practice and a US Tax Preparer credential mean the advice holds up to Kenyan and international scrutiny alike.</p>
               </div>
               <div className="why-card">
-                <i className="fas fa-shield-alt"></i>
-                <h4>100% Compliant</h4>
-                <p>Full KRA compliance assurance</p>
-              </div>
-              <div className="why-card">
-                <i className="fas fa-headset"></i>
-                <h4>Dedicated Support</h4>
-                <p>24/7 expert assistance available</p>
+                <i className="fas fa-rocket"></i>
+                <h4>Built for where money is moving</h4>
+                <p>A dedicated division for freelancers, remote workers, and digital asset holders — the parts of the economy most firms still ignore.</p>
               </div>
             </div>
           </div>
