@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { ThemeContext } from '../App';
 import './Footer.css';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  const logoSrc = "/mkg-logo.jpg";
+  const { theme } = useContext(ThemeContext);
+  
+  // Use different logos for light and dark mode from the logo folder
+  const logoSrc = theme === 'dark' 
+    ? "/images/logo/mkg-logo-white.png" 
+    : "/images/logo/mkg-logo.png";
 
   const quickLinks = [
     { path: '/', label: 'Home', icon: 'fas fa-home' },
@@ -35,7 +41,11 @@ export default function Footer() {
           {/* About Column - Logo + Company Name + Description */}
           <div className="footer-about">
             <div className="footer-logo">
-              <img src={logoSrc} alt="M.K. Gathu Consultancy Logo" className="footer-logo-image" />
+              <img 
+                src={logoSrc} 
+                alt="M.K. Gathu Consultancy Logo" 
+                className="footer-logo-image" 
+              />
               <div className="footer-logo-text">
                 <h3>M.K. Gathu Consultancy</h3>
                 <p>Business Intelligence · Financial Advisory · Strategic Consulting</p>
@@ -155,8 +165,8 @@ export default function Footer() {
         <div className="footer-developer">
           <p>
             Developed by <strong>RAFFCODES IT SOLUTIONS</strong> | 
-            <a href="https://raffcodes.vercel.app" target="_blank" rel="noopener noreferrer">
-              raffcodes.vercel.app
+            <a href="https://raffcodes.tech" target="_blank" rel="noopener noreferrer">
+              raffcodes.tech
             </a>
           </p>
         </div>

@@ -103,7 +103,7 @@ export default function Contact() {
         <section className="page-header">
           <div className="container">
             <h1>Let's find the right <span>division</span> for what you're facing.</h1>
-            <p>Tell us what you're working on — a filing deadline, an expansion decision, or a portfolio question — and we'll route it to the right people.</p>
+            <p>Tell us what you're working on  a filing deadline, an expansion decision, or a portfolio question and we'll route it to the right people.</p>
           </div>
         </section>
 
@@ -354,7 +354,7 @@ export default function Contact() {
               </div>
               <div className="faq-item">
                 <h3><i className="fas fa-sitemap"></i> Which division should I contact?</h3>
-                <p>Just tell us what you're working on — a filing deadline, an expansion decision, or a portfolio question — and we'll route it to the right division.</p>
+                <p>Just tell us what you're working on a filing deadline, an expansion decision, or a portfolio question and we'll route it to the right division.</p>
               </div>
             </div>
           </div>

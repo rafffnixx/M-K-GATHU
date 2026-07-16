@@ -6,7 +6,7 @@ export default function Privacy() {
   return (
     <>
       <SEO 
-        title="Privacy Policy — M.K. Gathu Consultancy"
+        title="Privacy Policy M.K. Gathu Consultancy"
         description="Read our privacy policy to understand how M.K. Gathu Consultancy collects, uses, and protects your personal and business information."
         path="/privacy"
         noIndex={true}

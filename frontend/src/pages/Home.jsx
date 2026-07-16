@@ -70,16 +70,26 @@ export default function Home() {
   return (
     <>
       <SEO 
-        title="M.K. Gathu Consultancy — Business Intelligence · Financial Advisory · Strategic Consulting"
-        description="Nairobi-based financial and business advisory firm trusted by 500+ businesses — financial advisory, business strategy, accounting & compliance, investment intelligence, digital economy advisory, and corporate training."
+        title="M.K. Gathu Consultancy Business Intelligence · Financial Advisory · Strategic Consulting"
+        description="Nairobi-based financial and business advisory firm trusted by 500+ businesses financial advisory, business strategy, accounting & compliance, investment intelligence, digital economy advisory, and corporate training."
         path="/"
       />
       
       <h1 className="sr-only">M.K. Gathu Consultancy - Business Intelligence· Financial Advisory · Strategic Consulting</h1>
       
       <div className="home-page">
-        {/* Hero Section with Image */}
-        <section id="home" className="hero-section">
+        {/* Hero Section with Background Image and Side Image */}
+        <section 
+          id="home" 
+          className="hero-section"
+          style={{
+            backgroundImage: "url('/images/hero/hero-background.jpg')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundAttachment: 'fixed'
+          }}
+        >
+          <div className="hero-overlay"></div>
           <div className="hero-container">
             <div className="hero-content-wrapper">
               {/* Left - Text Content */}
@@ -88,7 +98,7 @@ export default function Home() {
                   <i className="fas fa-map-pin"></i> Nairobi, Kenya · Serving Clients Worldwide
                 </div>
                 <h1>Business Intelligence, Financial Advisory & <span>Strategic Consulting.</span></h1>
-                <p className="hero-desc">Trusted by 500+ Kenyan businesses, plus freelancers and remote professionals worldwide. We combine deep local expertise — KRA, ICPAK, NSE — with specialist international support, including US tax filing for freelancers and remote workers.</p>
+                <p className="hero-desc">Trusted by 500+ Kenyan businesses, plus freelancers and remote professionals worldwide. We combine deep local expertise KRA, ICPAK, NSE with specialist international support, including US tax filing for freelancers and remote workers.</p>
                 <div className="hero-buttons">
                   <Link to="/contact" className="btn-gold">
                     <i className="fas fa-calendar-check"></i> Book a Consultation
@@ -104,10 +114,10 @@ export default function Home() {
                 </div>
               </div>
               
-              {/* Right - Image */}
+              {/* Right - Side Image */}
               <div className="hero-image">
                 <img 
-                  src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600&q=80" 
+                  src="/images/hero/hero-image.jpg"
                   alt="M.K. Gathu Consultancy - Financial Advisory Team" 
                   loading="lazy"
                 />
@@ -120,7 +130,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Trust Badges */}
+        {/* Rest of the sections remain the same */}
         <div className="trust-badges">
           <div className="container">
             <div className="badges-grid">
@@ -169,7 +179,7 @@ export default function Home() {
           <div className="container">
             <div className="section-header">
               <h2 className="section-title">Our <span>Divisions</span></h2>
-              <p className="section-subtitle">One firm. Six divisions. Each built around a specific kind of client — from individuals structuring personal wealth to businesses navigating audits, market entry, or their first fractional CFO.</p>
+              <p className="section-subtitle">One firm. Six divisions. Each built around a specific kind of client from individuals structuring personal wealth to businesses navigating audits, market entry, or their first fractional CFO.</p>
             </div>
             <div className="services-grid">
               {divisions.map((division) => (
@@ -204,7 +214,7 @@ export default function Home() {
               <div className="feature-card">
                 <div className="feature-icon"><i className="fas fa-sitemap"></i></div>
                 <h3>One firm, six disciplines</h3>
-                <p>Compliance, strategy, investment research, and training under a single point of contact — no handing your file between firms.</p>
+                <p>Compliance, strategy, investment research, and training under a single point of contact no handing your file between firms.</p>
               </div>
               <div className="feature-card">
                 <div className="feature-icon"><i className="fas fa-certificate"></i></div>
@@ -214,7 +224,7 @@ export default function Home() {
               <div className="feature-card">
                 <div className="feature-icon"><i className="fas fa-rocket"></i></div>
                 <h3>Built for where money is moving</h3>
-                <p>A dedicated division for freelancers, remote workers, and digital asset holders — the parts of the economy most firms still ignore.</p>
+                <p>A dedicated division for freelancers, remote workers, and digital asset holders the parts of the economy most firms still ignore.</p>
               </div>
             </div>
           </div>
@@ -225,7 +235,7 @@ export default function Home() {
           <div className="container">
             <div className="section-header">
               <h2 className="section-title">Our <span>Purpose</span></h2>
-              <p className="section-subtitle">Why the firm exists — and where it's headed.</p>
+              <p className="section-subtitle">Why the firm exists and where it's headed.</p>
             </div>
             <div className="mission-grid">
               <div className="mission-card">
@@ -236,7 +246,7 @@ export default function Home() {
               <div className="mission-card">
                 <span className="mission-tag">Vision</span>
                 <h3>One of East Africa's most respected advisory firms.</h3>
-                <p>To build M.K. Gathu Consultancy into one of East Africa's most respected advisory firms — delivering finance, strategy, business transformation, and corporate training to SMEs, corporates, NGOs, and public institutions.</p>
+                <p>To build M.K. Gathu Consultancy into one of East Africa's most respected advisory firms delivering finance, strategy, business transformation, and corporate training to SMEs, corporates, NGOs, and public institutions.</p>
               </div>
             </div>
             <div className="values-section">
@@ -258,7 +268,7 @@ export default function Home() {
           <div className="container">
             <div className="section-header">
               <h2 className="section-title">Recent <span>Insights</span></h2>
-              <p className="section-subtitle">Notes on tax, markets, and business strategy — written for the decisions our clients are actually facing.</p>
+              <p className="section-subtitle">Notes on tax, markets, and business strategy written for the decisions our clients are actually facing.</p>
             </div>
             <div className="insights-grid">
               {insights.map((item, index) => (
@@ -278,7 +288,7 @@ export default function Home() {
           <div className="container">
             <div className="cta-content">
               <h2>Let's find the right division for what you're facing.</h2>
-              <p>Tell us what you're working on — a filing deadline, an expansion decision, or a portfolio question — and we'll route it to the right people.</p>
+              <p>Tell us what you're working on a filing deadline, an expansion decision, or a portfolio question and we'll route it to the right people.</p>
               <div className="cta-buttons">
                 <a href="mailto:gathukamau23@gmail.com" className="btn-gold">
                   <i className="fas fa-envelope"></i> Email Us

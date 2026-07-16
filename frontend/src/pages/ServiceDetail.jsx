@@ -11,8 +11,8 @@ export default function ServiceDetail() {
       title: 'Financial Advisory',
       icon: 'fas fa-chart-pie',
       tagline: 'Clarity for your money, structure for your future.',
-      description: 'We help individuals and business owners understand, structure, and grow their finances — from personal wealth planning to full CFO-level oversight.',
-      fullDescription: `Financial Advisory at M.K. Gathu Consultancy is about giving you clarity over your money and structure for your future. We work with individuals and business owners to understand, organize, and grow their finances — from personal wealth planning to full CFO-level oversight for companies that need financial leadership without the full-time cost.
+      description: 'We help individuals and business owners understand, structure, and grow their finances from personal wealth planning to full CFO-level oversight.',
+      fullDescription: `Financial Advisory at M.K. Gathu Consultancy is about giving you clarity over your money and structure for your future. We work with individuals and business owners to understand, organize, and grow their finances from personal wealth planning to full CFO-level oversight for companies that need financial leadership without the full-time cost.
 
 Our approach combines deep local expertise with international best practices. Whether you're an individual looking to structure your personal wealth, a business owner seeking fractional CFO services, or a company needing cash flow management and financial modeling, we deliver practical, actionable advice that makes a real difference.`,
       features: [
@@ -50,7 +50,7 @@ Our approach combines deep local expertise with international best practices. Wh
       icon: 'fas fa-handshake',
       tagline: 'Strategy that turns growth into results.',
       description: 'For SMEs and scaling businesses, we provide the strategic thinking usually reserved for large corporates.',
-      fullDescription: `Business Advisory at M.K. Gathu Consultancy delivers the strategic thinking usually reserved for large corporates — now accessible to SMEs and scaling businesses. We help you grow with a plan, not by guesswork.
+      fullDescription: `Business Advisory at M.K. Gathu Consultancy delivers the strategic thinking usually reserved for large corporates now accessible to SMEs and scaling businesses. We help you grow with a plan, not by guesswork.
 
 Our advisory services cover market entry planning, pricing strategy, operational optimization, and expansion planning. We work alongside your team to identify opportunities, overcome challenges, and build a roadmap for sustainable growth.`,
       features: [
@@ -84,8 +84,8 @@ Our advisory services cover market entry planning, pricing strategy, operational
       title: 'Accounting & Compliance',
       icon: 'fas fa-file-invoice',
       tagline: 'The foundation every business is built on.',
-      description: 'Accurate books, timely filings, and audit-ready records — delivered by a credentialed team.',
-      fullDescription: `Accounting & Compliance at M.K. Gathu Consultancy is the foundation every business is built on. We deliver accurate books, timely filings, and audit-ready records — all delivered by a credentialed team aligned with ICPAK standards.
+      description: 'Accurate books, timely filings, and audit-ready records delivered by a credentialed team.',
+      fullDescription: `Accounting & Compliance at M.K. Gathu Consultancy is the foundation every business is built on. We deliver accurate books, timely filings, and audit-ready records all delivered by a credentialed team aligned with ICPAK standards.
 
 From business registration and KRA compliance to bookkeeping, payroll, and tax filing, we handle the financial infrastructure so you can focus on running your business. Our team ensures you stay compliant with Kenyan regulations while maintaining clean, organized financial records.`,
       features: [
@@ -161,8 +161,8 @@ Our research is informed by Nairobi Securities Exchange (NSE) and Capital Market
       title: 'Digital Economy Advisory',
       icon: 'fas fa-globe',
       tagline: 'Built for the new way people earn.',
-      description: 'Freelancers, remote workers, creators, and traders — built specifically for the modern earner.',
-      fullDescription: `Digital Economy Advisory at M.K. Gathu Consultancy is built for the new way people earn. Freelancers, remote workers, creators, and traders operate outside traditional financial systems — we built this division specifically for them.
+      description: 'Freelancers, remote workers, creators, and traders built specifically for the modern earner.',
+      fullDescription: `Digital Economy Advisory at M.K. Gathu Consultancy is built for the new way people earn. Freelancers, remote workers, creators, and traders operate outside traditional financial systems we built this division specifically for them.
 
 We cover cross-border tax, digital asset research, and income structuring for the modern earner. Our services include US tax preparation (Form 1040, W-2, 1099-NEC), W-8BEN setup, ITIN application assistance, and international income structuring for freelancers and remote professionals.`,
       features: [
@@ -203,8 +203,8 @@ We cover cross-border tax, digital asset research, and income structuring for th
       title: 'Corporate Training',
       icon: 'fas fa-graduation-cap',
       tagline: 'Building financial fluency, one team at a time.',
-      description: 'Practical financial skills that drive better decisions — from Excel to financial modeling.',
-      fullDescription: `Corporate Training at M.K. Gathu Consultancy builds financial fluency, one team at a time. We train teams and individuals in the practical financial skills that drive better decisions — Excel, financial modeling, tax literacy, and finance fundamentals for managers who aren't finance professionals.
+      description: 'Practical financial skills that drive better decisions from Excel to financial modeling.',
+      fullDescription: `Corporate Training at M.K. Gathu Consultancy builds financial fluency, one team at a time. We train teams and individuals in the practical financial skills that drive better decisions Excel, financial modeling, tax literacy, and finance fundamentals for managers who aren't finance professionals.
 
 Our M.K. Gathu Academy delivers hands-on training that transforms how teams understand and work with financial data. From basic Excel skills to advanced financial modeling, we equip your team with the tools they need to make better business decisions.`,
       features: [
@@ -403,7 +403,7 @@ Our M.K. Gathu Academy delivers hands-on training that transforms how teams unde
           <div className="container">
             <div className="cta-box">
               <h2>Ready to Get Started with {division.title}?</h2>
-              <p>Tell us what you're working on — a filing deadline, an expansion decision, or a portfolio question — and we'll route it to the right people.</p>
+              <p>Tell us what you're working on a filing deadline, an expansion decision, or a portfolio question and we'll route it to the right people.</p>
               <div className="cta-buttons">
                 <Link to="/contact" className="btn-gold">
                   <i className="fas fa-calendar-check"></i> Book a Consultation

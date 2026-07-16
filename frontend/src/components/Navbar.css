@@ -80,6 +80,7 @@
   align-items: center;
   justify-content: center;
   margin-right: 16px;
+  flex-shrink: 0;
 }
 
 .theme-toggle-nav:hover {
@@ -96,6 +97,7 @@
   border: none;
   cursor: pointer;
   padding: 6px;
+  flex-shrink: 0;
 }
 
 .navbar-toggle .bar {
@@ -235,7 +237,7 @@ body.dark-mode .theme-toggle-nav:hover {
 }
 
 /* ============================================
-   RESPONSIVE
+   RESPONSIVE - Mobile Menu
    ============================================ */
 
 @media (max-width: 900px) {
@@ -259,6 +261,8 @@ body.dark-mode .theme-toggle-nav:hover {
     visibility: hidden;
     transition: all 0.3s ease;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
   }
 
   .navbar-menu.active {
@@ -273,24 +277,43 @@ body.dark-mode .theme-toggle-nav:hover {
 
   .navbar-link {
     display: block;
-    padding: 12px 0;
-    font-size: 0.95rem;
+    padding: 14px 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #1A1A1A;
     border-bottom: 1px solid #E8E6DD;
+    transition: color 0.2s ease, background 0.2s ease;
   }
 
   .navbar-link::after {
     display: none;
   }
 
+  .navbar-link:hover {
+    color: #C9A24B;
+    background: rgba(201, 162, 75, 0.05);
+  }
+
   .navbar-link.active {
     color: #C9A24B;
+    font-weight: 600;
   }
 
   .navbar-cta {
     display: flex;
     justify-content: center;
-    margin-top: 8px;
+    margin-top: 12px;
     width: 100%;
+    padding: 14px 20px;
+    font-size: 0.95rem;
+    background: #C9A24B;
+    color: #FFFFFF;
+    border-radius: 4px;
+  }
+
+  .navbar-cta:hover {
+    background: #B88D2A;
+    transform: translateY(-2px);
   }
 
   .theme-toggle-nav {
@@ -305,11 +328,26 @@ body.dark-mode .theme-toggle-nav:hover {
   }
 
   body.dark-mode .navbar-link {
+    color: #EDEBE2;
     border-bottom-color: #1B2231;
+  }
+
+  body.dark-mode .navbar-link:hover {
+    color: #C9A24B;
+    background: rgba(201, 162, 75, 0.08);
   }
 
   body.dark-mode .navbar-link.active {
     color: #C9A24B;
+  }
+
+  body.dark-mode .navbar-cta {
+    background: #C9A24B;
+    color: #080B13;
+  }
+
+  body.dark-mode .navbar-cta:hover {
+    background: #E4C374;
   }
 }
 
@@ -333,11 +371,53 @@ body.dark-mode .theme-toggle-nav:hover {
 
   .navbar-menu {
     padding: 16px;
+    max-height: calc(100vh - 70px);
+  }
+
+  .navbar-link {
+    padding: 12px 0;
+    font-size: 0.95rem;
   }
 
   .theme-toggle-nav {
     width: 36px;
     height: 36px;
     font-size: 0.95rem;
+  }
+
+  .navbar-cta {
+    padding: 12px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Accessibility: Focus styles */
+.navbar-link:focus-visible,
+.navbar-toggle:focus-visible,
+.theme-toggle-nav:focus-visible,
+.navbar-cta:focus-visible {
+  outline: 2px solid #C9A24B;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Touch-friendly: Larger tap targets on mobile */
+@media (max-width: 900px) {
+  .navbar-link {
+    padding: 16px 0;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-toggle {
+    padding: 8px;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .theme-toggle-nav {
+    min-width: 44px;
+    min-height: 44px;
   }
 }

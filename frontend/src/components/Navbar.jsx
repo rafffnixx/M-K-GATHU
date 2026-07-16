@@ -34,7 +34,7 @@ export default function Navbar() {
       <div className="navbar-container">
         {/* Logo */}
         <Link to="/" className="navbar-logo" onClick={closeMenu}>
-          <img src="/mkg-logo.jpg" alt="M.K. Gathu Consultancy" className="logo-image" />
+          <img src="/logo.png" alt="M.K. Gathu Consultancy" className="logo-image" />
           <div className="logo-text">
             <span className="logo-name">M.K. Gathu</span>
             <span className="logo-tagline">Consultancy</span>

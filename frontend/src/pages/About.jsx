@@ -16,9 +16,9 @@ export default function About() {
   ];
 
   const whyItems = [
-    { icon: 'fas fa-sitemap', title: 'One firm, six disciplines', desc: 'Compliance, strategy, investment research, and training under a single point of contact — no handing your file between firms.' },
+    { icon: 'fas fa-sitemap', title: 'One firm, six disciplines', desc: 'Compliance, strategy, investment research, and training under a single point of contact no handing your file between firms.' },
     { icon: 'fas fa-certificate', title: 'Credentialed, not just capable', desc: 'ICPAK-aligned practice and a US Tax Preparer credential mean the advice holds up to Kenyan and international scrutiny alike.' },
-    { icon: 'fas fa-rocket', title: 'Built for where money is moving', desc: 'A dedicated division for freelancers, remote workers, and digital asset holders — the parts of the economy most firms still ignore.' }
+    { icon: 'fas fa-rocket', title: 'Built for where money is moving', desc: 'A dedicated division for freelancers, remote workers, and digital asset holders the parts of the economy most firms still ignore.' }
   ];
 
   // Divisions with icons for preview
@@ -34,8 +34,8 @@ export default function About() {
   return (
     <>
       <SEO 
-        title="About M.K. Gathu Consultancy — Business Intelligence · Financial Advisory · Strategic Consulting"
-        description="Nairobi-based financial and business advisory firm trusted by 500+ businesses — financial advisory, business strategy, accounting & compliance, investment intelligence, digital economy advisory, and corporate training. ICPAK-aligned with US Tax Preparer credential."
+        title="About M.K. Gathu Consultancy Business Intelligence · Financial Advisory · Strategic Consulting"
+        description="Nairobi-based financial and business advisory firm trusted by 500+ businesses financial advisory, business strategy, accounting & compliance, investment intelligence, digital economy advisory, and corporate training. ICPAK-aligned with US Tax Preparer credential."
         path="/about"
       />
       
@@ -52,39 +52,53 @@ export default function About() {
             <div className="about-flex">
               <div className="about-text">
                 <h2>Who We Are</h2>
-                <p>M.K. Gathu Consultancy is a Nairobi-based financial and business advisory firm trusted by 500+ businesses and professionals. We combine deep local expertise — KRA, ICPAK, NSE — with specialist international support, including US tax filing for freelancers and remote workers.</p>
+                <p>M.K. Gathu Consultancy is a Nairobi-based financial and business advisory firm trusted by 500+ businesses and professionals. We combine deep local expertise KRA, ICPAK, NSE with specialist international support, including US tax filing for freelancers and remote workers.</p>
                 <p>We are structured as a multi-disciplinary firm with six integrated divisions, ensuring that a bookkeeping client can access investment research, and a business advisory client can call on tax strategy, without ever leaving M.K. Gathu Consultancy.</p>
                 
                 <h2>Our Mission</h2>
                 <p>To help organizations improve financial performance through practical consulting, financial analysis, professional training, and data-driven decision-making.</p>
                 
                 <h2>Our Vision</h2>
-                <p>To build M.K. Gathu Consultancy into one of East Africa's most respected advisory firms — delivering finance, strategy, business transformation, and corporate training to SMEs, corporates, NGOs, and public institutions.</p>
+                <p>To build M.K. Gathu Consultancy into one of East Africa's most respected advisory firms delivering finance, strategy, business transformation, and corporate training to SMEs, corporates, NGOs, and public institutions.</p>
                 
-                <div className="about-stats">
-                  <div className="stat-item">
-                    <span className="stat-number">500+</span>
-                    <span className="stat-label">Businesses & Professionals Served</span>
+                {/* Stats - Horizontal Single Row */}
+                <div className="about-stats-horizontal">
+                  <div className="stat-horizontal">
+                    <span className="stat-number-horizontal">500+</span>
+                    <span className="stat-label-horizontal">Businesses & Professionals Served</span>
                   </div>
-                  <div className="stat-item">
-                    <span className="stat-number">ICPAK</span>
-                    <span className="stat-label">Aligned Practice</span>
+                  <div className="stat-horizontal">
+                    <span className="stat-number-horizontal">ICPAK</span>
+                    <span className="stat-label-horizontal">Aligned Practice</span>
                   </div>
-                  <div className="stat-item">
-                    <span className="stat-number">US</span>
-                    <span className="stat-label">Tax Preparer Credentialed</span>
+                  <div className="stat-horizontal">
+                    <span className="stat-number-horizontal">US</span>
+                    <span className="stat-label-horizontal">Tax Preparer Credentialed</span>
                   </div>
-                  <div className="stat-item">
-                    <span className="stat-number">NSE & CMA</span>
-                    <span className="stat-label">Research Informed</span>
+                  <div className="stat-horizontal">
+                    <span className="stat-number-horizontal">NSE & CMA</span>
+                    <span className="stat-label-horizontal">Research Informed</span>
                   </div>
                 </div>
                 
-                <div className="about-contact">
-                  <p><i className="fas fa-map-marker-alt"></i> <strong>Location:</strong> Westlands, Nairobi, Kenya</p>
-                  <p><i className="fas fa-envelope"></i> <strong>Email:</strong> <a href="mailto:gathukamau23@gmail.com">gathukamau23@gmail.com</a></p>
-                  <p><i className="fas fa-phone"></i> <strong>Phone:</strong> <a href="tel:+254762610912">+254 762 610 912</a></p>
-                  <p><i className="fab fa-whatsapp"></i> <strong>WhatsApp:</strong> <a href="https://wa.me/254762610912" target="_blank" rel="noopener noreferrer">+254 762 610 912</a></p>
+                {/* Contact - Horizontal Single Row */}
+                <div className="about-contact-horizontal">
+                  <span className="contact-horizontal">
+                    <i className="fas fa-map-marker-alt"></i>
+                    Westlands, Nairobi, Kenya
+                  </span>
+                  <span className="contact-horizontal">
+                    <i className="fas fa-envelope"></i>
+                    <a href="mailto:gathukamau23@gmail.com">gathukamau23@gmail.com</a>
+                  </span>
+                  <span className="contact-horizontal">
+                    <i className="fas fa-phone"></i>
+                    <a href="tel:+254762610912">+254 762 610 912</a>
+                  </span>
+                  <span className="contact-horizontal">
+                    <i className="fab fa-whatsapp"></i>
+                    <a href="https://wa.me/254762610912" target="_blank" rel="noopener noreferrer">+254 762 610 912</a>
+                  </span>
                 </div>
                 
                 <div className="about-cta">
@@ -96,12 +110,12 @@ export default function About() {
               
               <div className="about-img">
                 <img 
-                  src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600&q=80" 
+                  src="/images/about/about-team.jpg" 
                   alt="Professional financial consultant team in Nairobi, Kenya" 
                   loading="lazy" 
                 />
                 <img 
-                  src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80" 
+                  src="/images/about/about-office.jpg"
                   alt="Financial advisory and strategic consulting services in Kenya" 
                   loading="lazy" 
                   style={{marginTop: '24px'}} 

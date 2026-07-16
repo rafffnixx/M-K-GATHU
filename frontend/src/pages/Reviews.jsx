@@ -93,7 +93,7 @@ export default function Reviews() {
   return (
     <>
       <SEO 
-        title="Client Testimonials — M.K. Gathu Consultancy"
+        title="Client Testimonials M.K. Gathu Consultancy"
         description="Read authentic reviews from businesses and professionals we've helped. See how M.K. Gathu Consultancy has transformed finances for 500+ clients across Kenya and worldwide."
         path="/reviews"
       />

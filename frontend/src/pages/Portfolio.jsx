@@ -12,7 +12,7 @@ export default function Portfolio() {
       challenge: "Disorganized finances, KRA penalties, and cash flow issues",
       solution: "Implemented proper accounting systems, KRA compliance, and debt tracking",
       result: "98% KRA compliance, 40% improved cash flow, secured bank loan",
-      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80"
+      image: "/images/portfolio/tech-startup.jpg"
     },
     {
       id: 2,
@@ -22,7 +22,7 @@ export default function Portfolio() {
       challenge: "Poor inventory management and tax filing delays",
       solution: "Automated payroll, tax compliance, and financial reporting systems",
       result: "Reduced tax penalties by 100%, 25% profit increase",
-      image: "https://images.unsplash.com/photo-1556741533-6e6a3bd8e0d6?w=600&q=80"
+      image: "/images/portfolio/retail-chain.jpg"
     },
     {
       id: 3,
@@ -32,7 +32,7 @@ export default function Portfolio() {
       challenge: "New business needing full registration and financial structure",
       solution: "Complete business registration, KRA PIN, payroll setup, and accounting",
       result: "Fully compliant from day one, ready for investment",
-      image: "https://images.unsplash.com/photo-1579621970795-87facc2f976d?w=600&q=80"
+      image: "/images/portfolio/sme-registration.jpg"
     },
     {
       id: 4,
@@ -42,7 +42,7 @@ export default function Portfolio() {
       challenge: "Accumulated KRA penalties and compliance issues",
       solution: "Audit, penalty negotiation, and automated filing system",
       result: "Cleared all penalties, 100% compliance restored",
-      image: "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?w=600&q=80"
+      image: "/images/portfolio/kra-compliance.jpg"
     },
     {
       id: 5,
@@ -52,7 +52,7 @@ export default function Portfolio() {
       challenge: "Rising operational costs and inefficient tax planning",
       solution: "Cost restructuring, tax optimization, and financial forecasting",
       result: "30% reduction in operational costs, 45% tax savings",
-      image: "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=600&q=80"
+      image: "/images/portfolio/manufacturing.jpg"
     },
     {
       id: 6,
@@ -62,7 +62,7 @@ export default function Portfolio() {
       challenge: "Multiple payment gateways and accounting chaos",
       solution: "Unified accounting system, automated reconciliation, tax compliance",
       result: "Real-time financial visibility, 50% less accounting time",
-      image: "https://images.unsplash.com/photo-1556742031-c6961e8560b0?w=600&q=80"
+      image: "/images/portfolio/ecommerce.jpg"
     }
   ];
 
@@ -103,8 +103,8 @@ export default function Portfolio() {
   return (
     <>
       <SEO 
-        title="Success Stories — M.K. Gathu Consultancy Case Studies"
-        description="Real results from businesses and professionals we've helped — financial advisory, KRA compliance, investment intelligence, and digital economy advisory. Trusted by 500+ clients across Kenya and worldwide."
+        title="Success Stories M.K. Gathu Consultancy Case Studies"
+        description="Real results from businesses and professionals we've helped financial advisory, KRA compliance, investment intelligence, and digital economy advisory. Trusted by 500+ clients across Kenya and worldwide."
         path="/portfolio"
       />
       
@@ -147,7 +147,7 @@ export default function Portfolio() {
           <div className="container">
             <div className="section-header">
               <h2 className="section-title">Client <span>Case Studies</span></h2>
-              <p className="section-subtitle">From compliance to strategy to investment intelligence — real results across every division</p>
+              <p className="section-subtitle">From compliance to strategy to investment intelligence real results across every division</p>
             </div>
             <div className="portfolio-grid">
               {caseStudies.map(study => (
@@ -190,7 +190,7 @@ export default function Portfolio() {
               <i className="fas fa-quote-right"></i>
               <p>"M.K. Gathu Consultancy didn't just fix our financial problems; they transformed how we think about money management. Their team is professional, responsive, and truly cares about our success."</p>
               <div className="highlight-author">
-                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" />
+                <img src="/images/portfolio/testimonial-client.jpg" alt="Client" />
                 <div>
                   <strong>John Mwangi</strong>
                   <span>CEO, TechVision Solutions</span>
