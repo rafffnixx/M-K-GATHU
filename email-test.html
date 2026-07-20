@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Test M.K GATHU Form</title>
+</head>
+<body>
+    <h1>Test Form</h1>
+    <form id="testForm">
+        <input type="text" name="fullname" placeholder="Full Name" required><br>
+        <input type="email" name="email" placeholder="Email" required><br>
+        <input type="text" name="phone" placeholder="Phone"><br>
+        <textarea name="message" placeholder="Message" required></textarea><br>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzXHmp7PyoUGbpPeKSxmn46e91adRkDKUPEqszf8mB642_YkticBQg2VHm9BW9JcuCu3Q/exec";
+        
+        document.getElementById('testForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = {
+                type: 'contact',
+                fullname: e.target.fullname.value,
+                email: e.target.email.value,
+                phone: e.target.phone.value || '',
+                message: e.target.message.value
+            };
+            
+            const result = document.getElementById('result');
+            result.innerHTML = 'Sending...';
+            
+            try {
+                const response = await fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(formData)
+                });
+                result.innerHTML = '✅ Sent! Check your email and Google Sheet.';
+                result.style.color = 'green';
+                e.target.reset();
+            } catch(error) {
+                result.innerHTML = '❌ Error: ' + error.message;
+                result.style.color = 'red';
+            }
+        });
+    </script>
+</body>
+</html>
